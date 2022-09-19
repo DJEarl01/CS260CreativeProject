@@ -1,0 +1,15 @@
+body {
+    background-color: white;
+}
+
+/* NavBar Styles */
+
+.navbar {
+    width: 400px;
+    margin: 0 auto;
+    background: none;
+}
+
+.beneath-navbar-break {
+    height: 100px;
+}
