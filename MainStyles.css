@@ -5,11 +5,76 @@ body {
 /* NavBar Styles */
 
 .navbar {
-    width: 400px;
     margin: 0 auto;
-    background: none;
 }
 
-.beneath-navbar-break {
-    height: 100px;
+.main-image-item-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.homeimage {
+    width: 100%;
+}
+
+.logo-image {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+.over-image-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-header {
+    background-color: rgba(100,100,100,0.8);
+    border-radius: 13px;
+    padding: 10px;
+}
+
+/* Phone Styles */
+@media only screen and (max-width: 420px) {
+    .navbar {
+        background-color: #ccc;
+    }
+    
+    .logo-image {
+        display: none;
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 421px) and (max-width: 991px) {
+    .navbar {
+        background-color: rgba(150,150,150,0.6);
+        
+    }
+    
+    .logo-image {
+        display: none;
+    }
+    
+    .navbar-brand {
+        margin: -10px 0;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 992px) {
+    .navbar {
+        width: 550px;
+        height: 70px;
+        background: none;
+    }
+
+    .navbar-brand {
+        display: none;
+    }
 }
