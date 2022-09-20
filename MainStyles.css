@@ -28,7 +28,7 @@ body::-webkit-scrollbar {
 /* Phone Styles */
 @media only screen and (max-width: 420px) {
     .navbar {
-        background-color: rgba(150, 150, 150, 0.6);
+        background-color: rgba(190, 190, 190, 0.8);
     }
 
     .logo-image {
@@ -43,7 +43,7 @@ body::-webkit-scrollbar {
 /* Tablet Styles */
 @media only screen and (min-width: 421px) and (max-width: 991px) {
     .navbar {
-        background-color: rgba(150, 150, 150, 0.6);
+        background-color: rgba(190, 190, 190, 0.8);
     }
 
     .logo-image {
