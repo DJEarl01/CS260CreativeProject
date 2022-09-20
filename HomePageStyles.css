@@ -6,10 +6,6 @@
     overflow: hidden;
 }
 
-.homeimage {
-    width: 100%;
-}
-
 .over-image-items {
     position: absolute;
     top: 50%;
@@ -18,7 +14,36 @@
 }
 
 .main-header {
-    background-color: rgba(100,100,100,0.8);
+    background-color: rgba(150, 150, 150, 0.6);
     border-radius: 13px;
     padding: 10px;
+}
+
+/* Phone Styles */
+@media only screen and (max-width: 420px) {
+    .homeimage {
+        height: 100vh;
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 421px) and (max-width: 991px) {
+    .homeimage {
+        height: 100vh;
+    }
+}
+
+/* Desktop Styles (Small Screens) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .homeimage {
+        height: 100vh;
+    }
+}
+
+/* Desktop Styles (Larger Screens) */
+
+@media only screen and (min-width: 1200px) {
+    .homeimage {
+        width: 100%;
+    }
 }

@@ -17,13 +17,13 @@ body {
 /* Phone Styles */
 @media only screen and (max-width: 420px) {
     .navbar {
-        background-color: #ccc;
+        background-color: rgba(150, 150, 150, 0.6);
     }
-    
+
     .logo-image {
         display: none;
     }
-    
+
     .navbar-brand {
         margin: -10px 0;
     }
@@ -32,14 +32,13 @@ body {
 /* Tablet Styles */
 @media only screen and (min-width: 421px) and (max-width: 991px) {
     .navbar {
-        background-color: rgba(150,150,150,0.6);
-        
+        background-color: rgba(150, 150, 150, 0.6);
     }
-    
+
     .logo-image {
         display: none;
     }
-    
+
     .navbar-brand {
         margin: -10px 0;
     }
@@ -51,6 +50,13 @@ body {
         width: 550px;
         height: 70px;
         background: none;
+    }
+
+    .logo-image {
+        display: block;
+        position: fixed;
+        top: 3px;
+        
     }
 
     .navbar-brand {
