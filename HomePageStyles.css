@@ -1,0 +1,24 @@
+.main-image-item-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.homeimage {
+    width: 100%;
+}
+
+.over-image-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-header {
+    background-color: rgba(100,100,100,0.8);
+    border-radius: 13px;
+    padding: 10px;
+}
