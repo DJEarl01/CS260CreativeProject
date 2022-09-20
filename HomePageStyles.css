@@ -1,0 +1,49 @@
+.main-image-item-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.over-image-items {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.main-header {
+    background-color: rgba(150, 150, 150, 0.6);
+    border-radius: 13px;
+    padding: 10px;
+}
+
+/* Phone Styles */
+@media only screen and (max-width: 420px) {
+    .homeimage {
+        height: 100vh;
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 421px) and (max-width: 991px) {
+    .homeimage {
+        height: 100vh;
+    }
+}
+
+/* Desktop Styles (Small Screens) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .homeimage {
+        height: 100vh;
+    }
+}
+
+/* Desktop Styles (Larger Screens) */
+
+@media only screen and (min-width: 1200px) {
+    .homeimage {
+        width: 100%;
+    }
+}

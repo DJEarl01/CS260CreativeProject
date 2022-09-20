@@ -1,15 +1,103 @@
 body {
     background-color: white;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 /* NavBar Styles */
 
 .navbar {
-    width: 400px;
     margin: 0 auto;
-    background: none;
+}
+
+.logo-image {
+    position: absolute;
+    top: 8px;
+    left: 16px;
 }
 
 .beneath-navbar-break {
-    height: 100px;
+    border-bottom: solid black 7px;
+    height: 107px;
+}
+
+/* Phone Styles */
+@media only screen and (max-width: 420px) {
+    .navbar {
+        background-color: rgba(150, 150, 150, 0.6);
+    }
+
+    .logo-image {
+        display: none;
+    }
+
+    .navbar-brand {
+        margin: -10px 0;
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 421px) and (max-width: 991px) {
+    .navbar {
+        background-color: rgba(150, 150, 150, 0.6);
+    }
+
+    .logo-image {
+        display: none;
+    }
+
+    .navbar-brand {
+        margin: -10px 0;
+    }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 992px) {
+    .navbar {
+        width: 550px;
+        height: 70px;
+        background: none;
+    }
+
+    .logo-image {
+        display: block;
+        position: fixed;
+        top: 3px;
+        
+    }
+
+    .navbar-brand {
+        display: none;
+    }
+    
+    /* Body Styles */
+    
+    .description-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .headers {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        display: inline;
+    }
+    
+    
+    .header-background {
+        padding: 30vh 0;
+        height: 100vh;
+        background-image: url("images/ferpa_compliant.svg");
+    }
+    
+    .body-text {
+        justify-content: center;
+        text-align: center;
+    }
 }
