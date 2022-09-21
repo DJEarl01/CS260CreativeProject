@@ -14,6 +14,11 @@ body::-webkit-scrollbar {
     margin: 0 auto;
 }
 
+.nav-item {
+    width: 200px !important;
+    text-align: center;
+}
+
 .logo-image {
     position: absolute;
     top: 8px;
@@ -58,7 +63,7 @@ body::-webkit-scrollbar {
 /* Desktop Styles */
 @media only screen and (min-width: 992px) {
     .navbar {
-        width: 550px;
+        width: 630px;
         height: 70px;
         background: none;
     }
