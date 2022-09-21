@@ -29,6 +29,10 @@ body::-webkit-scrollbar {
 
 /* Phone Styles */
 @media only screen and (max-width: 420px) {
+    body {
+        background-color: #D6F8FA;    
+    }
+    
     .navbar {
         background-color: rgba(190, 190, 190, 0.8);
     }
@@ -47,6 +51,34 @@ body::-webkit-scrollbar {
     }
 
     .nav-item {
+        text-align: center;
+    }
+    
+        /* Body Styles */
+
+    .description-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .headers {
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+
+    .header-background {
+        margin-top: 10vh;
+        height: 30vh;
+        background-image: url("images/ferpa_compliant.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .body-text {
+        justify-content: center;
         text-align: center;
     }
 }
@@ -118,9 +150,11 @@ body::-webkit-scrollbar {
 
 
     .header-background {
-        padding: 30vh 0;
-        height: 100vh;
+        margin-top: 10vh;
+        height: 120vh;
         background-image: url("images/ferpa_compliant.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
     }
 
     .body-text {
