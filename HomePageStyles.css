@@ -1,15 +1,16 @@
+/* NavBar background for when not in the main image */
 .navbar-background {
     background-color: rgba(190, 190, 190, 0.95);
-    position: fixed;
-    top: 0px;
     width: 100vw;
     height: 70px;
+    padding-bottom: 70px;
 }
 
+/* Section for the main screen with the mountain pic and the inside stuff */
 .main-image-item-container {
     position: relative;
     text-align: center;
-    color: #595959;
+    color: #fcfcfc;
     height: 100vh;
     max-height: 80vw;
     overflow: hidden;
@@ -17,7 +18,7 @@
 
 .over-image-items {
     position: absolute;
-    top: 50%;
+    top: 46%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -30,48 +31,63 @@
     width: 100%;
 }
 
+/* Options Section */
 .options-header {
     margin: 40px;
+    text-align: center;
 }
 
 .base-options-container {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 100vw;
+    margin: 0 auto;
+    width: 95vw;
     align-items: center !important;
     justify-content: center !important;
 }
 
 .option {
     display: grid;
-    margin: 1em 1em;
+    margin: 1em;
+    padding: 2em;
     text-align: center;
+    background-color: #fafafa;
+    border-radius: 15px;
 }
 
-a, a:hover {
+.option p {
+    font-size: 20px;
+}
+
+.option-link,
+.option-link:hover {
     text-decoration: none;
     color: black;
     flex-basis: 30%;
 }
 
-a:hover {
+.option-link:hover,
+.nav-item a:hover {
+    /* Addtonal Item here to put a background around a highlighted navbar item */
     background-color: #c9c9c9;
     border-radius: 15px;
 }
 
 .preview-ID {
     margin: 0 auto;
+    
 }
 
-.product-button {
-    margin: 1em 2em;
+.page-footer {
+    margin: 25px 0;
+    text-align: center;
 }
 
 /* Phone Styles */
 @media only screen and (max-width: 420px) {
     .navbar-background {
-        display: none;
+        display: block;
     }
 
     .main-header {
@@ -84,13 +100,17 @@ a:hover {
 
     .base-ID {
         width: 50vw;
+    }
+
+    .preview-ID {
+        width: 70vw;
     }
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 421px) and (max-width: 991px) {
     .navbar-background {
-        display: none;
+        display: block;
     }
 
     .main-header {
@@ -104,12 +124,24 @@ a:hover {
     .base-ID {
         width: 50vw;
     }
+
+    .preview-ID {
+        width: 70vw;
+        max-width: 300px;
+    }
 }
 
 /* Desktop Styles (Small Screens) */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .navbar-background {
+        position: fixed;
+        top: 0px;
+        padding-bottom: 0;
+    }
+
     .main-header {
         font-size: 2.5em;
+        margin-top: 70px;
     }
 
     .over-image-items {
@@ -119,13 +151,25 @@ a:hover {
     .base-ID {
         width: 45vw;
     }
+
+    .preview-ID {
+        width: 35vw;
+        max-width: 450px;
+    }
 }
 
 /* Desktop Styles (Larger Screens) */
 
 @media only screen and (min-width: 1200px) {
+    .navbar-background {
+        position: fixed;
+        top: 0px;
+        padding-bottom: 0;
+    }
+    
     .main-header {
         font-size: 2.5em;
+        margin-top: 70px;
     }
 
     .over-image-items {
@@ -134,5 +178,9 @@ a:hover {
 
     .base-ID {
         width: 500px;
+    }
+
+    .preview-ID {
+        width: 425px;
     }
 }
