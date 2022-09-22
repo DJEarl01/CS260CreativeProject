@@ -16,14 +16,6 @@ body::-webkit-scrollbar {
     margin: 0 auto;
 }
 
-.option-link,
-.option-link:hover {
-    text-decoration: none;
-    color: black;
-    flex-basis: 30%;
-}
-
-.option-link:hover,
 .nav-item a:hover {
     /* Addtonal Item here to put a background around a highlighted navbar item */
     background-color: #c9c9c9;

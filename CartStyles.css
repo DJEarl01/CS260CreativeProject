@@ -4,3 +4,49 @@
     height: 70px;
     padding-bottom: 70px;
 }
+
+.main-cart-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0 auto;
+    margin-top: 5vh;
+    width: 96vw;
+}
+
+.products-in-cart {
+    background-color: red;
+    border-radius: 13px;
+    width: 62.75vw;
+    padding: 1.5vw;
+}
+
+.subtotal-checkout {
+    background-color: orange;
+    border-radius: 13px;
+    width: 31vw;
+    padding: 1.5vw;
+    margin-left: 2vw;
+}
+
+
+/* Phone Styles */
+@media only screen and (max-width: 420px) {
+    
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 421px) and (max-width: 991px) {
+    
+}
+
+/* Desktop Styles (Small Screens) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    
+}
+
+/* Desktop Styles (Larger Screens) */
+
+@media only screen and (min-width: 1200px) {
+    
+}
