@@ -65,11 +65,13 @@ body::-webkit-scrollbar {
     .headers {
         justify-content: center;
         text-align: center;
+        margin-top: 20px;
         margin-left: auto;
         margin-right: auto;
         padding-left: 15px;
         padding-right: 15px;
         border: solid black 5px;
+        border-radius: 15px;
         background-color: #D6F8FA;
         width: 85%;
     }
@@ -167,6 +169,7 @@ body::-webkit-scrollbar {
         padding-left: 15px;
         padding-right: 15px;
         border: solid black 5px;
+        border-radius: 10px;
         background-color: #D6F8FA;
         width: 50%;
     }
