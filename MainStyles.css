@@ -137,15 +137,22 @@ body::-webkit-scrollbar {
 
     .description-text {
         display: flex;
-        flex-direction: column;
+        flex-flow: column wrap;
         justify-content: center;
+        height: 100vh;
+        margin-right: 20px;
     }
 
     .headers {
-        align-items: center;
         justify-content: center;
         text-align: center;
-        display: inline;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: solid black 5px;
+        background-color: #D6F8FA;
+        width: 50%;
     }
 
 
@@ -160,5 +167,23 @@ body::-webkit-scrollbar {
     .body-text {
         justify-content: center;
         text-align: center;
+    }
+    
+    .about-us {
+        margin: 5vh;
+        text-align: center;
+        justify-content: center;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 2;
+    }
+    
+    p {
+        font-size: 20px
+    }
+    
+    h2 {
+        margin-bottom: 20px;
     }
 }
