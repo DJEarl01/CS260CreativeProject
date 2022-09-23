@@ -158,7 +158,8 @@ body::-webkit-scrollbar {
         flex-flow: column wrap;
         justify-content: center;
         height: 100vh;
-        margin-right: 20px;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .headers {
@@ -206,5 +207,20 @@ body::-webkit-scrollbar {
     
     h2 {
         margin-bottom: 20px;
+    }
+    
+    .card {
+
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+    
+    .card-text {
+        font-size: 1.5em;
+    }
+    
+    .card-title {
+        font-size: 1.8em;
     }
 }
