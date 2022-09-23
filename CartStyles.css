@@ -20,10 +20,44 @@
     padding: 1.5vw;
 }
 
+.shopping-cart-header {
+    margin-bottom: 1.5vw;
+}
+
+.item-in-cart {
+    background-color: #EDEDED;
+    border-radius: 13px;
+    color: black;
+    padding: 1.5vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.item-in-cart:hover {
+    background-color: #E6E6E6;
+    text-decoration: none;
+    color: black;
+}
+
+.item-header {
+    width: 56.5vw;
+    margin: 0;
+}
+
+.item-price {
+    margin-bottom: 15px;
+}
+
+.preview-image {
+    width: 40vw;
+}
+
 .subtotal-checkout {
     background-color: #F5F5F5;
     border-radius: 13px;
     width: 31vw;
+    height: 130px;
     padding: 1.5vw;
     margin-left: 2vw;
 }
