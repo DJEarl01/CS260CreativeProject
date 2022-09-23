@@ -99,6 +99,14 @@ body::-webkit-scrollbar {
         margin-right: auto;
         line-height: 2;
     }
+    
+    h2 {
+        font-size: 22px;
+    }
+    
+    h1, h4 {
+        font-size: 25px;
+    }
 }
 
 /* Tablet Styles */
@@ -124,6 +132,43 @@ body::-webkit-scrollbar {
 
     .nav-item {
         text-align: center;
+    }
+    
+    .headers {
+        justify-content: center;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: solid black 5px;
+        border-radius: 10px;
+        background-color: #D6F8FA;
+        width: 60%;
+    }
+    
+    .header-background {
+        margin-left: 5vh;
+        margin-right: 5vh;
+        margin-top: 10vh;
+        height: 90vh;
+        background-image: url("images/ferpa_compliant.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    
+    .body-text {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .about-us {
+        text-align: center;
+        justify-content: center;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 2;
     }
 }
 
@@ -156,7 +201,6 @@ body::-webkit-scrollbar {
     .description-text {
         display: flex;
         flex-flow: column wrap;
-        justify-content: center;
         height: 100vh;
         margin-right: 20px;
     }
@@ -171,11 +215,13 @@ body::-webkit-scrollbar {
         border: solid black 5px;
         border-radius: 10px;
         background-color: #D6F8FA;
-        width: 50%;
+        width: 55%;
     }
 
 
     .header-background {
+        margin-left: 5vh;
+        margin-right: 5vh;
         margin-top: 10vh;
         height: 120vh;
         background-image: url("images/ferpa_compliant.svg");
@@ -192,7 +238,7 @@ body::-webkit-scrollbar {
         margin: 5vh;
         text-align: center;
         justify-content: center;
-        width: 60%;
+        width: 65%;
         margin-left: auto;
         margin-right: auto;
         line-height: 2;
