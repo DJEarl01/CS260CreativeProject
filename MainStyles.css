@@ -16,6 +16,13 @@ body::-webkit-scrollbar {
     margin: 0 auto;
 }
 
+.navbar-background {
+    background-color: #E6E6FA;
+    width: 100vw;
+    height: 70px;
+    padding-bottom: 70px;
+}
+
 .logo-image {
     position: absolute;
     top: 8px;
@@ -35,6 +42,10 @@ body::-webkit-scrollbar {
     
     .navbar {
         background-color: rgba(190, 190, 190, 0.8);
+    }
+    
+    .navbar-background {
+        display: block;
     }
 
     #navbarSupportedContent {
@@ -106,7 +117,10 @@ body::-webkit-scrollbar {
     .navbar {
         background-color: rgba(190, 190, 190, 0.8);
     }
-
+    
+    .navbar-background {
+        display: block;
+    }
     
     #navbarSupportedContent {
         background-color: rgba(210, 210, 210, 1);
@@ -125,34 +139,7 @@ body::-webkit-scrollbar {
     .nav-item {
         text-align: center;
     }
-}
-
-/* Desktop Styles */
-@media only screen and (min-width: 992px) {
-    .navbar {
-        width: 630px;
-        height: 70px;
-        background: none;
-    }
-
-    .logo-image {
-        display: block;
-        position: fixed;
-        top: 3px;
-
-    }
-
-    .navbar-brand {
-        display: none;
-    }
-
-    .nav-item {
-        width: 200px !important;
-        text-align: center;
-    }
-
-    /* Body Styles */
-
+    
     .description-text {
         display: flex;
         flex-flow: column wrap;
@@ -210,7 +197,113 @@ body::-webkit-scrollbar {
     }
     
     .card {
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+    
+    .card-text {
+        font-size: 1.5em;
+    }
+    
+    .card-title {
+        font-size: 1.8em;
+    }
+}
 
+/* Desktop Styles */
+@media only screen and (min-width: 992px) {
+    .navbar {
+        width: 630px;
+        height: 70px;
+        background: none;
+    }
+    
+    .navbar-background {
+        position: fixed;
+        top: 0px;
+        padding-bottom: 0;
+        z-index: 2;
+    }
+
+    .logo-image {
+        display: block;
+        position: fixed;
+        top: 3px;
+        z-index: 2;
+    }
+
+    .navbar-brand {
+        display: none;
+    }
+
+    .nav-item {
+        width: 200px !important;
+        text-align: center;
+    }
+    
+    
+
+    /* Body Styles */
+
+    .description-text {
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        height: 100vh;
+        margin-right: auto;
+        margin-left: auto;
+        z-index: 10;
+    }
+
+    .headers {
+        justify-content: center;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        border: solid black 5px;
+        border-radius: 10px;
+        background-color: #D6F8FA;
+        width: 50%;
+    }
+
+
+    .header-background {
+        margin-top: 10vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
+        height: 120vh;
+        background-image: url("images/ferpa_compliant.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .body-text {
+        justify-content: center;
+        text-align: center;
+    }
+    
+    .about-us {
+        margin: 5vh;
+        text-align: center;
+        justify-content: center;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 2;
+    }
+    
+    p {
+        font-size: 20px
+    }
+    
+    h2 {
+        margin-bottom: 20px;
+    }
+    
+    .card {
         margin-left: auto;
         margin-right: auto;
         justify-content: center;
