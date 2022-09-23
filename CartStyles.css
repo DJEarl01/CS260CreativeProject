@@ -1,16 +1,27 @@
+.background-picture {
+    position: fixed; 
+    top:50px; 
+    left:100px;
+    width:300px; 
+}
+
 .navbar-background {
     background-color: rgba(210, 210, 210, 0.95);
     width: 100vw;
     height: 70px;
     padding-bottom: 70px;
+    position: fixed;
+    z-index: 6;
 }
 
 .main-cart-container {
     display: flex;
+    position: absolute;
     flex-wrap: wrap;
     flex-direction: row;
     margin: 0 auto;
     width: 96vw;
+    z-index: 3;
 }
 
 .products-in-cart {
