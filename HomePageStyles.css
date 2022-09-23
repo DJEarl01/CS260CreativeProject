@@ -4,6 +4,7 @@
     width: 100vw;
     height: 70px;
     padding-bottom: 70px;
+    z-index: 0;
 }
 
 /* Section for the main screen with the mountain pic and the inside stuff */

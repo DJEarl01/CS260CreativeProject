@@ -10,43 +10,61 @@
     flex-wrap: wrap;
     flex-direction: row;
     margin: 0 auto;
-    margin-top: 5vh;
     width: 96vw;
 }
 
 .products-in-cart {
-    background-color: red;
+    background-color: #F5F5F5;
     border-radius: 13px;
     width: 62.75vw;
     padding: 1.5vw;
 }
 
 .subtotal-checkout {
-    background-color: orange;
+    background-color: #F5F5F5;
     border-radius: 13px;
     width: 31vw;
     padding: 1.5vw;
     margin-left: 2vw;
 }
 
+.page-footer {
+    margin: 25px 0;
+    text-align: center;
+}
+
 
 /* Phone Styles */
 @media only screen and (max-width: 420px) {
-    
+    .navbar-background {
+        display: none;
+    }
+    .main-cart-container {
+        margin-top: 85px;
+    }
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 421px) and (max-width: 991px) {
-    
+    .navbar-background {
+        display: none;
+    }
+    .main-cart-container {
+        margin-top: 85px;
+    }
 }
 
 /* Desktop Styles (Small Screens) */
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-    
+    .main-cart-container {
+        margin-top: 100px;
+    }
 }
 
 /* Desktop Styles (Larger Screens) */
 
 @media only screen and (min-width: 1200px) {
-    
+    .main-cart-container {
+        margin-top: 100px;
+    }
 }
