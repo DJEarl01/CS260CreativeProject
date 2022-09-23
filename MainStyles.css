@@ -113,6 +113,17 @@ body::-webkit-scrollbar {
     h1, h4 {
         font-size: 25px;
     }
+    
+    .card {
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    
+    .card-text {
+        font-size: .9em;
+        line-height: 1.5;
+    }
 }
 
 /* Tablet Styles */
@@ -244,7 +255,6 @@ body::-webkit-scrollbar {
         margin: 5vh;
         text-align: center;
         justify-content: center;
-        width: 65%;
         margin-left: auto;
         margin-right: auto;
         line-height: 2;
@@ -256,5 +266,16 @@ body::-webkit-scrollbar {
     
     h2 {
         margin-bottom: 20px;
+    }
+    
+    .card {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        justify-content: center;
+    }
+    
+    .card-text {
+        font-size: 1.5em;
     }
 }
