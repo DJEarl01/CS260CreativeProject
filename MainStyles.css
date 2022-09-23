@@ -16,12 +16,6 @@ body::-webkit-scrollbar {
     margin: 0 auto;
 }
 
-.nav-item a:hover {
-    /* Addtonal Item here to put a background around a highlighted navbar item */
-    background-color: #c9c9c9;
-    border-radius: 15px;
-}
-
 .logo-image {
     position: absolute;
     top: 8px;
@@ -105,25 +99,6 @@ body::-webkit-scrollbar {
         margin-right: auto;
         line-height: 2;
     }
-    
-    h2 {
-        font-size: 22px;
-    }
-    
-    h1, h4 {
-        font-size: 25px;
-    }
-    
-    .card {
-        margin-left: auto;
-        margin-right: auto;
-        width: 100%;
-    }
-    
-    .card-text {
-        font-size: .9em;
-        line-height: 1.5;
-    }
 }
 
 /* Tablet Styles */
@@ -149,43 +124,6 @@ body::-webkit-scrollbar {
 
     .nav-item {
         text-align: center;
-    }
-    
-    .headers {
-        justify-content: center;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
-        padding-left: 15px;
-        padding-right: 15px;
-        border: solid black 5px;
-        border-radius: 10px;
-        background-color: #D6F8FA;
-        width: 60%;
-    }
-    
-    .header-background {
-        margin-left: 5vh;
-        margin-right: 5vh;
-        margin-top: 10vh;
-        height: 90vh;
-        background-image: url("images/ferpa_compliant.svg");
-        background-size: contain;
-        background-repeat: no-repeat;
-    }
-    
-    .body-text {
-        justify-content: center;
-        text-align: center;
-    }
-    
-    .about-us {
-        text-align: center;
-        justify-content: center;
-        width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-        line-height: 2;
     }
 }
 
@@ -218,6 +156,7 @@ body::-webkit-scrollbar {
     .description-text {
         display: flex;
         flex-flow: column wrap;
+        justify-content: center;
         height: 100vh;
         margin-right: 20px;
     }
@@ -232,14 +171,14 @@ body::-webkit-scrollbar {
         border: solid black 5px;
         border-radius: 10px;
         background-color: #D6F8FA;
-        width: 55%;
+        width: 50%;
     }
 
 
     .header-background {
-        margin-left: 5vh;
-        margin-right: 5vh;
         margin-top: 10vh;
+        margin-left: 5vw;
+        margin-right: 5vw;
         height: 120vh;
         background-image: url("images/ferpa_compliant.svg");
         background-size: contain;
@@ -255,6 +194,7 @@ body::-webkit-scrollbar {
         margin: 5vh;
         text-align: center;
         justify-content: center;
+        width: 60%;
         margin-left: auto;
         margin-right: auto;
         line-height: 2;
@@ -266,20 +206,5 @@ body::-webkit-scrollbar {
     
     h2 {
         margin-bottom: 20px;
-    }
-    
-    .card {
-        width: 80%;
-        margin-left: auto;
-        margin-right: auto;
-        justify-content: center;
-    }
-    
-    .card-text {
-        font-size: 1.5em;
-    }
-    
-    .card-title {
-        font-size: 1.75em;
     }
 }
