@@ -278,4 +278,8 @@ body::-webkit-scrollbar {
     .card-text {
         font-size: 1.5em;
     }
+    
+    .card-title {
+        font-size: 1.75em;
+    }
 }
