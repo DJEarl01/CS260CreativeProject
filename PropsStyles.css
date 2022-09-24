@@ -19,8 +19,8 @@ body::-webkit-scrollbar {
 .navbar-background {
     background-color: #E6E6FA;
     width: 100vw;
-    height: 70px;
-    padding-bottom: 70px;
+    height: 65px;
+    padding-bottom: 65px;
 }
 
 .logo-image {
@@ -141,7 +141,7 @@ body::-webkit-scrollbar {
     /* Desktop Styles */
 @media only screen and (min-width: 992px) {
     .navbar {
-        width: 630px;
+        width: 832px;
         height: 70px;
         background: none;
     }

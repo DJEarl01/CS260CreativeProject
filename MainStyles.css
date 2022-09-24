@@ -214,7 +214,7 @@ body::-webkit-scrollbar {
 /* Desktop Styles */
 @media only screen and (min-width: 992px) {
     .navbar {
-        width: 630px;
+        width: 832px;
         height: 70px;
         background: none;
     }
@@ -238,7 +238,7 @@ body::-webkit-scrollbar {
     }
 
     .nav-item {
-        width: 200px !important;
+        width: 200px;
         text-align: center;
     }
     
