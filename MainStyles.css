@@ -45,7 +45,7 @@ body::-webkit-scrollbar {
     }
     
     .navbar-background {
-        display: block;
+        display: none;
     }
 
     #navbarSupportedContent {
@@ -119,7 +119,7 @@ body::-webkit-scrollbar {
     }
     
     .navbar-background {
-        display: block;
+        display: none;
     }
     
     #navbarSupportedContent {
@@ -230,7 +230,7 @@ body::-webkit-scrollbar {
         display: block;
         position: fixed;
         top: 3px;
-        z-index: 2;
+        z-index: 10;
     }
 
     .navbar-brand {
