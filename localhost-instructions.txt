@@ -1,0 +1,4 @@
+Install the server stuff (see https://github.com/BYU-CS-260/advanced-topics/ README)
+
+Run http-server in the main directory (Should be .../CS260CreativeProject)
+Go to localhost:8080 in Chrome
