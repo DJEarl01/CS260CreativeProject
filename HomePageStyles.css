@@ -17,6 +17,11 @@
     overflow: hidden;
 }
 
+.example-photo {
+    position: absolute;
+    left: 0;
+}
+
 .over-image-items {
     position: absolute;
     top: 46%;
@@ -98,7 +103,26 @@
         width: 70vw;
     }
 
+    .base-ID-wrapper {
+        width: 70vw;
+    }
+
+    .overlayed {
+        z-index: 9;
+        top: 2.6vw;
+        left: 2.6vw;
+        width: 20vw !important;
+    }
+
     .base-ID {
+        position: relative;
+        width: 51vw;
+        height: 33vw;
+        margin: 0 auto;
+        border: 2PX SOLID RED;
+    }
+
+    .example-photo {
         width: 50vw;
     }
 
@@ -121,8 +145,27 @@
         width: 70vw;
     }
 
+    .base-ID-wrapper {
+        width: 70vw;
+    }
+
+    .example-photo {
+        width: 49.5vw;
+    }
+
+    .overlayed {
+        z-index: 9;
+        top: 2.6vw;
+        left: 2.6vw;
+        width: 20vw;
+    }
+
     .base-ID {
+        position: relative;
         width: 50vw;
+        height: 32vw;
+        margin: 0 auto;
+        border: 2PX SOLID RED;
     }
 
     .preview-ID {
@@ -148,8 +191,23 @@
         width: 70vw;
     }
 
+    .base-ID-wrapper {
+        width: 70vw;
+    }
+
+    .overlayed {
+        z-index: 9;
+        top: 22px;
+        left: 23px;
+        width: 169px;
+    }
+
     .base-ID {
-        width: 45vw;
+        position: relative;
+        width: 428px;
+        height: 280px;
+        margin: 0 auto;
+        border: 2PX SOLID RED;
     }
 
     .preview-ID {
@@ -176,8 +234,23 @@
         width: 70vw;
     }
 
+    .base-ID-wrapper {
+        width: 70vw;
+    }
+
+    .overlayed {
+        z-index: 9;
+        top: 22px;
+        left: 23px;
+        width: 169px;
+    }
+
     .base-ID {
-        width: 500px;
+        position: relative;
+        width: 428px;
+        height: 280px;
+        margin: 0 auto;
+        border: 2PX SOLID RED;
     }
 
     .preview-ID {
