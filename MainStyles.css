@@ -38,6 +38,13 @@ body::-webkit-scrollbar {
     padding-bottom: 5vh;
 }
 
+.newQ:hover {
+    background-color: #CBC3E3;
+}
+.newQ {
+  transition-duration: 0.3s;
+}
+
 /* Phone Styles */
 @media only screen and (max-width: 420px) {
     body {
@@ -319,5 +326,48 @@ body::-webkit-scrollbar {
     
     .card-title {
         font-size: 1.8em;
+    }
+    
+    /* YE QUOTES STYLES */
+    
+    .quoteBox {
+        padding-top: 10vh;
+        height: 100%;
+        max-height: 500px;
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        line-height: 3;
+    }
+    
+    .intro {
+        font-weight: bold;
+        padding: 5px;
+    }
+    
+    .warning {
+        font-weight: lighter;
+        font-style: italic;
+        padding: 5px;
+    }
+    
+    .newQ {
+        max-width: 100px;
+        max-height: 50px;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 7px;
+    }
+    
+    .quotes {
+        padding: 15px;
+        border: solid black 3px;
+        border-radius: 50px;
     }
 }
