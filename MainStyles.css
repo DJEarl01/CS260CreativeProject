@@ -41,20 +41,26 @@ body::-webkit-scrollbar {
 .newQ:hover {
     background-color: #CBC3E3;
 }
+
 .newQ {
-  transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+.page-footer {
+    margin: 25px 0;
+    text-align: center;
 }
 
 /* Phone Styles */
 @media only screen and (max-width: 420px) {
     body {
-        background-color: #D6F8FA;    
+        background-color: #D6F8FA;
     }
-    
+
     .navbar {
         background-color: rgba(190, 190, 190, 0.8);
     }
-    
+
     .navbar-background {
         display: none;
     }
@@ -75,8 +81,8 @@ body::-webkit-scrollbar {
     .nav-item {
         text-align: center;
     }
-    
-        /* Body Styles */
+
+    /* Body Styles */
 
     .description-text {
         display: flex;
@@ -111,7 +117,7 @@ body::-webkit-scrollbar {
         justify-content: center;
         text-align: center;
     }
-    
+
     .about-us {
         margin: 5vh;
         text-align: center;
@@ -121,6 +127,60 @@ body::-webkit-scrollbar {
         margin-right: auto;
         line-height: 2;
     }
+
+    .quoteBox {
+        padding-top: 10vh;
+        height: auto;
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .intro {
+        font-weight: bold;
+        font-size: 24px;
+        text-align: center;
+        text-align-last: center;
+        padding: 10px;
+        margin: 5px;
+
+    }
+
+    .warning {
+        font-weight: lighter;
+        font-style: italic;
+        padding: 10px;
+    }
+
+    .newQ {
+        max-width: 100px;
+        max-height: 50px;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 7px;
+
+    }
+
+    .quotes {
+        margin: 20px;
+        margin-top: 70px;
+        padding: 20px;
+        border: solid black 3px;
+        border-radius: 40px;
+    }
+
+    .box {
+        margin-bottom: 70px;
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }
 
 /* Tablet Styles */
@@ -128,11 +188,11 @@ body::-webkit-scrollbar {
     .navbar {
         background-color: rgba(190, 190, 190, 0.8);
     }
-    
+
     .navbar-background {
         display: none;
     }
-    
+
     #navbarSupportedContent {
         background-color: rgba(210, 210, 210, 1);
         border-radius: 15px;
@@ -150,7 +210,7 @@ body::-webkit-scrollbar {
     .nav-item {
         text-align: center;
     }
-    
+
     .description-text {
         display: flex;
         flex-flow: column wrap;
@@ -188,7 +248,7 @@ body::-webkit-scrollbar {
         justify-content: center;
         text-align: center;
     }
-    
+
     .about-us {
         margin: 5vh;
         text-align: center;
@@ -198,27 +258,126 @@ body::-webkit-scrollbar {
         margin-right: auto;
         line-height: 2;
     }
-    
+
     p {
         font-size: 20px
     }
-    
+
     h2 {
         margin-bottom: 20px;
     }
-    
+
     .card {
         margin-left: auto;
         margin-right: auto;
         justify-content: center;
     }
-    
+
     .card-text {
         font-size: 1.5em;
     }
-    
+
     .card-title {
         font-size: 1.8em;
+    }
+
+    .quoteBox {
+        padding-top: 10vh;
+        height: 100%;
+        max-height: 500px;
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        line-height: 3;
+    }
+
+    .intro {
+        font-weight: bold;
+        padding: 15px;
+        margin: 5px;
+
+    }
+
+    .warning {
+        font-weight: lighter;
+        font-style: italic;
+        padding: 10px;
+    }
+
+    .newQ {
+        max-width: 100px;
+        max-height: 50px;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 7px;
+
+    }
+
+    .quotes {
+        margin: 20px;
+        margin-top: 70px;
+        padding: 10px;
+        border: solid black 3px;
+        border-radius: 50px;
+    }
+
+    .quoteBox {
+        padding-top: 10vh;
+        height: 100%;
+        max-height: 700px;
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        line-height: 3;
+    }
+
+    .intro {
+        font-weight: bold;
+        padding: 15px;
+        margin: 5px;
+
+    }
+
+    .warning {
+        font-weight: lighter;
+        font-style: italic;
+        padding: 10px;
+    }
+
+    .newQ {
+        max-width: 100px;
+        max-height: 45px;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 7px;
+
+    }
+
+    .quotes {
+        margin: 15px;
+        margin-top: 30px;
+        padding: 10px;
+        border: solid black 3px;
+        border-radius: 50px;
+    }
+
+    .box {
+        margin-bottom: 20px;
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
 
@@ -229,7 +388,7 @@ body::-webkit-scrollbar {
         height: 70px;
         background: none;
     }
-    
+
     .navbar-background {
         position: fixed;
         top: 0px;
@@ -252,8 +411,8 @@ body::-webkit-scrollbar {
         width: 200px;
         text-align: center;
     }
-    
-    
+
+
 
     /* Body Styles */
 
@@ -295,7 +454,7 @@ body::-webkit-scrollbar {
         justify-content: center;
         text-align: center;
     }
-    
+
     .about-us {
         margin: 5vh;
         text-align: center;
@@ -305,35 +464,35 @@ body::-webkit-scrollbar {
         margin-right: auto;
         line-height: 2;
     }
-    
+
     p {
         font-size: 20px
     }
-    
+
     h2 {
         margin-bottom: 20px;
     }
-    
+
     .card {
         margin-left: auto;
         margin-right: auto;
         justify-content: center;
     }
-    
+
     .card-text {
         font-size: 1.5em;
     }
-    
+
     .card-title {
         font-size: 1.8em;
     }
-    
+
     /* YE QUOTES STYLES */
-    
+
     .quoteBox {
         padding-top: 10vh;
         height: 100%;
-        max-height: 500px;
+        max-height: 700px;
         display: flex;
         margin-right: auto;
         margin-left: auto;
@@ -343,20 +502,20 @@ body::-webkit-scrollbar {
         align-items: center;
         line-height: 3;
     }
-    
+
     .intro {
         font-weight: bold;
         padding: 15px;
         margin: 5px;
 
     }
-    
+
     .warning {
         font-weight: lighter;
         font-style: italic;
         padding: 10px;
     }
-    
+
     .newQ {
         max-width: 100px;
         max-height: 50px;
@@ -367,12 +526,19 @@ body::-webkit-scrollbar {
         margin-bottom: 7px;
 
     }
-    
+
     .quotes {
         margin: 20px;
         margin-top: 70px;
         padding: 10px;
         border: solid black 3px;
         border-radius: 50px;
+    }
+
+    .box {
+        margin-bottom: 70px;
+        display: flex;
+        margin-right: auto;
+        margin-left: auto;
     }
 }
