@@ -12,4 +12,3 @@ let quote = {
 document.querySelector(".newQ").addEventListener("click", function() {
     quote.yeQuote();
 })
-
