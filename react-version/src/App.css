@@ -1,0 +1,583 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background-color: white;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* NavBar Styles */
+
+.navbar {
+  margin: 0 auto;
+}
+
+.navbar-background {
+  background-color: #E6E6FA;
+  width: 100vw;
+  height: 70px;
+  padding-bottom: 70px;
+}
+
+.logo-image {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+.beneath-navbar-break {
+  border-bottom: solid black 7px;
+  height: 107px;
+}
+
+.about-us {
+  padding-bottom: 5vh;
+}
+
+.newQ:hover {
+  background-color: #CBC3E3;
+}
+
+.newQ {
+  transition-duration: 0.3s;
+}
+
+.page-footer {
+  margin: 25px 0;
+  text-align: center;
+}
+
+/* Phone Styles */
+@media only screen and (max-width: 420px) {
+  body {
+      background-color: #D6F8FA;
+  }
+
+  .navbar {
+      background-color: rgba(190, 190, 190, 0.8);
+  }
+
+  .navbar-background {
+      display: none;
+  }
+
+  #navbarSupportedContent {
+      background-color: rgba(210, 210, 210, 1);
+      border-radius: 15px;
+  }
+
+  .logo-image {
+      display: none;
+  }
+
+  .navbar-brand {
+      margin: -10px 0;
+  }
+
+  .nav-item {
+      text-align: center;
+  }
+
+  /* Body Styles */
+
+  .description-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+  }
+
+  .headers {
+      justify-content: center;
+      text-align: center;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+      border: solid black 5px;
+      border-radius: 15px;
+      background-color: #D6F8FA;
+      width: 85%;
+  }
+
+
+  .header-background {
+      margin-top: 10vh;
+      height: 30vh;
+      /*background-image: url("images/ferpa_compliant.svg");*/
+      background-size: contain;
+      background-repeat: no-repeat;
+  }
+
+  .body-text {
+      justify-content: center;
+      text-align: center;
+  }
+
+  .about-us {
+      margin: 5vh;
+      text-align: center;
+      justify-content: center;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 2;
+  }
+
+  .quoteBox {
+      padding-top: 10vh;
+      height: auto;
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+  }
+
+  .intro {
+      font-weight: bold;
+      font-size: 24px;
+      text-align: center;
+      text-align-last: center;
+      padding: 10px;
+      margin: 5px;
+
+  }
+
+  .warning {
+      font-weight: lighter;
+      font-style: italic;
+      padding: 10px;
+  }
+
+  .newQ {
+      max-width: 100px;
+      max-height: 50px;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 7px;
+
+  }
+
+  .quotes {
+      margin: 20px;
+      margin-top: 70px;
+      padding: 20px;
+      border: solid black 3px;
+      border-radius: 40px;
+  }
+
+  .box {
+      margin-bottom: 70px;
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+  }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 421px) and (max-width: 991px) {
+  .navbar {
+      background-color: rgba(190, 190, 190, 0.8);
+  }
+
+  .navbar-background {
+      display: none;
+  }
+
+  #navbarSupportedContent {
+      background-color: rgba(210, 210, 210, 1);
+      border-radius: 15px;
+      margin: 0 28vw;
+  }
+
+  .logo-image {
+      display: none;
+  }
+
+  .navbar-brand {
+      margin: -10px 0;
+  }
+
+  .nav-item {
+      text-align: center;
+  }
+
+  .description-text {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      height: 100vh;
+      margin-right: auto;
+      margin-left: auto;
+  }
+
+  .headers {
+      justify-content: center;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+      border: solid black 5px;
+      border-radius: 10px;
+      background-color: #D6F8FA;
+      width: 50%;
+  }
+
+
+  .header-background {
+      margin-top: 10vh;
+      margin-left: 5vw;
+      margin-right: 5vw;
+      height: 120vh;
+      /*background-image: url("images/ferpa_compliant.svg");*/
+      background-size: contain;
+      background-repeat: no-repeat;
+  }
+
+  .body-text {
+      justify-content: center;
+      text-align: center;
+  }
+
+  .about-us {
+      margin: 5vh;
+      text-align: center;
+      justify-content: center;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 2;
+  }
+
+  p {
+      font-size: 20px
+  }
+
+  h2 {
+      margin-bottom: 20px;
+  }
+
+  .card {
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+  }
+
+  .card-text {
+      font-size: 1.5em;
+  }
+
+  .card-title {
+      font-size: 1.8em;
+  }
+
+  .quoteBox {
+      padding-top: 10vh;
+      height: 100%;
+      max-height: 500px;
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      line-height: 3;
+  }
+
+  .intro {
+      font-weight: bold;
+      padding: 15px;
+      margin: 5px;
+
+  }
+
+  .warning {
+      font-weight: lighter;
+      font-style: italic;
+      padding: 10px;
+  }
+
+  .newQ {
+      max-width: 100px;
+      max-height: 50px;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 7px;
+
+  }
+
+  .quotes {
+      margin: 20px;
+      margin-top: 70px;
+      padding: 10px;
+      border: solid black 3px;
+      border-radius: 50px;
+  }
+
+  .quoteBox {
+      padding-top: 10vh;
+      height: 100%;
+      max-height: 700px;
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      line-height: 3;
+  }
+
+  .intro {
+      font-weight: bold;
+      padding: 15px;
+      margin: 5px;
+
+  }
+
+  .warning {
+      font-weight: lighter;
+      font-style: italic;
+      padding: 10px;
+  }
+
+  .newQ {
+      max-width: 100px;
+      max-height: 45px;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 7px;
+
+  }
+
+  .quotes {
+      margin: 15px;
+      margin-top: 30px;
+      padding: 10px;
+      border: solid black 3px;
+      border-radius: 50px;
+  }
+
+  .box {
+      margin-bottom: 20px;
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+  }
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 992px) {
+  .navbar {
+      width: 832px;
+      height: 70px;
+      background: none;
+  }
+
+  .navbar-background {
+      position: fixed;
+      top: 0px;
+      padding-bottom: 0;
+      z-index: 2;
+  }
+
+  .logo-image {
+      display: block;
+      position: fixed;
+      top: 3px;
+      z-index: 10;
+  }
+
+  .navbar-brand {
+      display: none;
+  }
+
+  .nav-item {
+      width: 200px;
+      text-align: center;
+  }
+
+
+
+  /* Body Styles */
+
+  .description-text {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      height: 100vh;
+      margin-right: auto;
+      margin-left: auto;
+      z-index: 10;
+  }
+
+  .headers {
+      justify-content: center;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 15px;
+      padding-right: 15px;
+      border: solid black 5px;
+      border-radius: 10px;
+      background-color: #D6F8FA;
+      width: 50%;
+  }
+
+
+  .header-background {
+      margin-top: 10vh;
+      margin-left: 5vw;
+      margin-right: 5vw;
+      height: 120vh;
+      /*background-image: url("images/ferpa_compliant.svg");*/
+      background-size: contain;
+      background-repeat: no-repeat;
+  }
+
+  .body-text {
+      justify-content: center;
+      text-align: center;
+  }
+
+  .about-us {
+      margin: 5vh;
+      text-align: center;
+      justify-content: center;
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 2;
+  }
+
+  p {
+      font-size: 20px
+  }
+
+  h2 {
+      margin-bottom: 20px;
+  }
+
+  .card {
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: center;
+  }
+
+  .card-text {
+      font-size: 1.5em;
+  }
+
+  .card-title {
+      font-size: 1.8em;
+  }
+
+  /* YE QUOTES STYLES */
+
+  .quoteBox {
+      padding-top: 10vh;
+      height: 100%;
+      max-height: 700px;
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+      flex-wrap: wrap;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      line-height: 3;
+  }
+
+  .intro {
+      font-weight: bold;
+      padding: 15px;
+      margin: 5px;
+
+  }
+
+  .warning {
+      font-weight: lighter;
+      font-style: italic;
+      padding: 10px;
+  }
+
+  .newQ {
+      max-width: 100px;
+      max-height: 50px;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 7px;
+
+  }
+
+  .quotes {
+      margin: 20px;
+      margin-top: 70px;
+      padding: 10px;
+      border: solid black 3px;
+      border-radius: 50px;
+  }
+
+  .box {
+      margin-bottom: 70px;
+      display: flex;
+      margin-right: auto;
+      margin-left: auto;
+  }
+}
