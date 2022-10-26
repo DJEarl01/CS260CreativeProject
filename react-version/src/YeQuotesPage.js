@@ -1,5 +1,4 @@
 import React from "react";
-import './YeQuotesPage.css';
 
 class YeQuotesPage extends React.Component {
 
