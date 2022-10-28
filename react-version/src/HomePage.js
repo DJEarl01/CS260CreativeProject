@@ -1,70 +1,37 @@
 import React from "react";
-import './HomePage.css';
+import styles from './HomePage.module.css';
 
 class HomePage extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      wasKanyeClicked: false,
-      kanyeQuote: ''
+      kanyeQuote: 'Test Quote',
+      wasKanyeClicked: false
     };
 
     this.handleKanyeClick = this.handleKanyeClick.bind(this);
     this.getKanyeQuote = this.getKanyeQuote.bind(this);
   }
 
-  getKanyeQuote() {
-
-  }
+  getKanyeQuote = () => {
+    const url = "https://api.kanye.rest/";
+    fetch(url)
+      .then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        let grabbedResult = json.quote;
+        this.setState({kanyeQuote: grabbedResult});
+      }.bind(this));
+  };
 
   handleKanyeClick() {
     if (this.state.wasKanyeClicked) {
-      console.log("KANYE WAS CLICKED");
       this.setState({wasKanyeClicked: false});
     } else {
-      console.log("KANYE WAS NEVER CLICKED");
+      this.getKanyeQuote();
       this.setState({wasKanyeClicked: true});
     }
-
-    /*
-    if (this.state.wasKanyeClicked) {
-      this.setState({wasKanyeClicked:false});
-      return (
-        <div>
-          <h1 id="main-header">Looking For Some ID?</h1>
-          <div id="base-ID-wrapper">
-            <div class="base-ID">
-              <img src="./images/default-card.png" class="example-photo" alt='Default Card' />Image
-              <img src="https://xsgames.co/randomusers/avatar.php?g=male" class="example-photo overlayed" id="profile-photo" alt='Profile Download' />
-            </div>
-          </div>
-          <h2 id="surpriseDirections">Click the ID Card for a Surprise</h2>
-        </div>
-      )
-    } else {
-      this.setState({wasKanyeClicked:true});
-      const url = "";
-      fetch(url)
-        .then(function (response) {
-          return response.json();
-        }).then(function (json) {
-          let results = "";
-          results += json.quote;
-          return (
-            <div>
-              <h1 id="main-header" style="color: black; background-color: rgba(240,240,240,0.6);">{results}</h1>
-              <div id="base-ID-wrapper">
-                <div class="base-ID">
-                  <img src="./images/default-card.png" class="example-photo" alt='Default Card' />Image
-                  <img src="./images/KanyeID.jpg" class="example-photo overlayed" id="profile-photo" alt='Profile Download' />
-                </div>
-              </div>
-              <h2 id="surpriseDirections">Click Again to Return to Normal</h2>
-            </div>
-          )
-        });
-    } */
   }
 
   render() {
@@ -72,14 +39,14 @@ class HomePage extends React.Component {
     if (!this.state.wasKanyeClicked) {
      mainCard = (
       <div>
-        <h1 id="main-header">Looking For Some ID?</h1>
+        <h1 id={styles["main-header"]}>Looking For Some ID?</h1>
         <div id="base-ID-wrapper">
           <div class="base-ID">
             <img src="./images/default-card.png" class="example-photo" alt='Default Card' />Image
             <img src="https://xsgames.co/randomusers/avatar.php?g=male" class="example-photo overlayed" id="profile-photo" alt='Profile Download' />
           </div>
         </div>
-        <h2 id="surpriseDirections">Click the ID Card for a Surprise</h2>
+        <h2 style={{"color": "white"}}>Click the ID Card for a Surprise</h2>
       </div>
     )
     } else {
@@ -92,7 +59,7 @@ class HomePage extends React.Component {
               <img src="./images/KanyeID.jpg" class="example-photo overlayed" id="profile-photo" alt='Profile Download' />
             </div>
           </div>
-          <h2 id="surpriseDirections">Click Again to Return to Normal</h2>
+          <h2 style={{"color": "white"}}>Click Again to Return to Normal</h2>
         </div>
       )
     }
@@ -138,7 +105,7 @@ class HomePage extends React.Component {
           </nav>
         </div >
 
-        <div class="navbar-background"></div>
+        <div class={styles["navbar-background"]}></div>
         <div class="main-image-item-container">
           {backgroundImg}
           <a class="logo-image" href="./">

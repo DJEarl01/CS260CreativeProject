@@ -1,0 +1,279 @@
+.App {
+  text-align: center;
+}
+
+#main-header {
+    color: white;
+}
+
+/* NavBar background for when not in the main image */
+.navbar-background {
+    background-color: rgba(190, 190, 190, 0.95);
+    width: 100vw;
+    height: 70px;
+    padding-bottom: 70px;
+    z-index: 0;
+}
+
+/* Section for the main screen with the mountain pic and the inside stuff */
+.main-image-item-container {
+    position: relative;
+    text-align: center;
+    color: #fcfcfc;
+    height: 100vh;
+    max-height: 80vw;
+    overflow: hidden;
+}
+
+.example-photo {
+    position: absolute;
+    left: 0;
+}
+
+.over-image-items {
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#main-header {
+    padding: 10px;
+}
+
+#homeimage {
+    width: 100%;
+}
+
+/* Options Section */
+.options-header {
+    margin: 40px;
+    text-align: center;
+}
+
+.base-options-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0 auto;
+    width: 95vw;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.option {
+    display: grid;
+    margin: 1em;
+    padding: 2em;
+    text-align: center;
+    background-color: #fafafa;
+    border-radius: 15px;
+}
+
+.option p {
+    font-size: 20px;
+}
+
+.option-link,
+.option-link:hover {
+    text-decoration: none;
+    color: black;
+    flex-basis: 30%;
+}
+
+.option-link:hover {
+    /* Addtonal Item here to put a background around a highlighted navbar item */
+    background-color: #c9c9c9;
+    border-radius: 15px;
+}
+
+.preview-ID {
+    margin: 0 auto;
+
+}
+
+.page-footer {
+    margin: 25px 0;
+    text-align: center;
+}
+
+/* Phone Styles */
+@media only screen and (max-width: 420px) {
+    .navbar-background {
+        display: block;
+    }
+
+    #main-header {
+        font-size: 5vw;
+    }
+
+    h2 {
+        font-size: 3vw;
+    }
+
+    .over-image-items {
+        width: 70vw;
+    }
+
+    .base-ID-wrapper {
+        width: 70vw;
+    }
+
+    .overlayed {
+        z-index: 9;
+        top: 2.6vw;
+        left: 2.6vw;
+        width: 20vw !important;
+    }
+
+    .base-ID {
+        position: relative;
+        width: 51vw;
+        height: 33vw;
+        margin: 0 auto;
+    }
+
+    .example-photo {
+        width: 50vw;
+    }
+
+    .preview-ID {
+        width: 70vw;
+    }
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 421px) and (max-width: 991px) {
+    .navbar-background {
+        display: block;
+    }
+
+    #main-header {
+        font-size: 5vw;
+    }
+
+    h2 {
+        font-size: 3vw;
+    }
+
+    .over-image-items {
+        width: 70vw;
+    }
+
+    .base-ID-wrapper {
+        width: 70vw;
+    }
+
+    .example-photo {
+        width: 49.5vw;
+    }
+
+    .overlayed {
+        z-index: 9;
+        top: 2.6vw;
+        left: 2.6vw;
+        width: 20vw;
+    }
+
+    .base-ID {
+        position: relative;
+        width: 50vw;
+        height: 32vw;
+        margin: 0 auto;
+    }
+
+    .preview-ID {
+        width: 70vw;
+        max-width: 300px;
+    }
+}
+
+/* Desktop Styles (Small Screens) */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .navbar-background {
+        position: fixed;
+        top: 0px;
+        padding-bottom: 0;
+    }
+
+    #main-header {
+        font-size: 2.5em;
+        margin-top: 70px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .over-image-items {
+        width: 70vw;
+    }
+
+    .base-ID-wrapper {
+        width: 70vw;
+    }
+
+    .overlayed {
+        z-index: 9;
+        top: 22px;
+        left: 23px;
+        width: 169px;
+    }
+
+    .base-ID {
+        position: relative;
+        width: 428px;
+        height: 280px;
+        margin: 0 auto;
+    }
+
+    .preview-ID {
+        width: 35vw;
+        max-width: 450px;
+    }
+}
+
+/* Desktop Styles (Larger Screens) */
+
+@media only screen and (min-width: 1200px) {
+    .navbar-background {
+        position: fixed;
+        top: 0px;
+        padding-bottom: 0;
+    }
+
+    #main-header {
+        font-size: 2.5em;
+        margin-top: 70px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    .over-image-items {
+        width: 70vw;
+    }
+
+    .base-ID-wrapper {
+        width: 70vw;
+    }
+
+    .overlayed {
+        z-index: 9;
+        top: 22px;
+        left: 23px;
+        width: 169px;
+    }
+
+    .base-ID {
+        position: relative;
+        width: 428px;
+        height: 280px;
+        margin: 0 auto;
+    }
+
+    .preview-ID {
+        width: 425px;
+    }
+}
