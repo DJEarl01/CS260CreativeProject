@@ -6,13 +6,28 @@ class HomePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      wasKanyeClicked: false
+      wasKanyeClicked: false,
+      kanyeQuote: ''
     };
 
     this.handleKanyeClick = this.handleKanyeClick.bind(this);
+    this.getKanyeQuote = this.getKanyeQuote.bind(this);
+  }
+
+  getKanyeQuote() {
+
   }
 
   handleKanyeClick() {
+    if (this.state.wasKanyeClicked) {
+      console.log("KANYE WAS CLICKED");
+      this.setState({wasKanyeClicked: false});
+    } else {
+      console.log("KANYE WAS NEVER CLICKED");
+      this.setState({wasKanyeClicked: true});
+    }
+
+    /*
     if (this.state.wasKanyeClicked) {
       this.setState({wasKanyeClicked:false});
       return (
@@ -29,7 +44,7 @@ class HomePage extends React.Component {
       )
     } else {
       this.setState({wasKanyeClicked:true});
-      const url = "https://api.kanye.rest/";
+      const url = "";
       fetch(url)
         .then(function (response) {
           return response.json();
@@ -49,11 +64,46 @@ class HomePage extends React.Component {
             </div>
           )
         });
-    }
+    } */
   }
 
   render() {
-    const surpriseHandler = this.handleKanyeClick()
+    let mainCard = '';
+    if (!this.state.wasKanyeClicked) {
+     mainCard = (
+      <div>
+        <h1 id="main-header">Looking For Some ID?</h1>
+        <div id="base-ID-wrapper">
+          <div class="base-ID">
+            <img src="./images/default-card.png" class="example-photo" alt='Default Card' />Image
+            <img src="https://xsgames.co/randomusers/avatar.php?g=male" class="example-photo overlayed" id="profile-photo" alt='Profile Download' />
+          </div>
+        </div>
+        <h2 id="surpriseDirections">Click the ID Card for a Surprise</h2>
+      </div>
+    )
+    } else {
+       mainCard = (
+        <div>
+          <h1 id="main-header" style={{"backgroundColor": "rgba(240,240,240,0.6)", "color": "black"}}>{this.state.kanyeQuote}</h1>
+          <div id="base-ID-wrapper">
+            <div class="base-ID">
+              <img src="./images/default-card.png" class="example-photo" alt='Default Card' />Image
+              <img src="./images/KanyeID.jpg" class="example-photo overlayed" id="profile-photo" alt='Profile Download' />
+            </div>
+          </div>
+          <h2 id="surpriseDirections">Click Again to Return to Normal</h2>
+        </div>
+      )
+    }
+
+    let backgroundImg = '';
+    if (!this.state.wasKanyeClicked) {
+      backgroundImg = (<img src="./images/Y_mountain_darkened.jpeg" id="homeimage" alt="Background" />)
+    } else {
+      backgroundImg = (<img src="./images/Kanye.webp" id="homeimage" alt="funny Background" />)
+    }
+
     return (
       <div>
         <div class="bootstrap-navbar">
@@ -90,12 +140,12 @@ class HomePage extends React.Component {
 
         <div class="navbar-background"></div>
         <div class="main-image-item-container">
-          <img src="./images/Y_mountain_darkened.jpeg" id="homeimage" alt="Background" />
+          {backgroundImg}
           <a class="logo-image" href="./">
             <img src="./images/ID-Cardz-Logo.svg" width="60" height="60" alt='Card Logo' />
           </a>
           <div class="over-image-items">
-            {surpriseHandler}
+            <button onClick={this.handleKanyeClick} style={{"background": "none", "border": "none", "outline": "none"}}>{mainCard}</button>
           </div>
         </div>
 

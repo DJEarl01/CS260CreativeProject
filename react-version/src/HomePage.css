@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+#main-header {
+    color: white;
+}
+
+#surpriseDirections {
+    color: white;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

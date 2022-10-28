@@ -17,19 +17,19 @@ class YeQuotesPage extends React.Component {
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./index.html">Home</a>
+                                    <a class="nav-link" href="./">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./about">About ID Cardz</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./cart">Cart</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="./props">Our Lineage</a>
                                 </li>
                                 <li class="nav-item active">
-                                    <a class="nav-link" href="./about.html">About ID Cardz<span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./cart.html">Cart</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./props.html">Our Lineage</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="./ye_quotes.html">Ye</a>
+                                    <a class="nav-link" href="./ye_quotes">Ye<span class="sr-only">(current)</span></a>
                                 </li>
                             </ul>
                         </div>
