@@ -12,23 +12,6 @@ body::-webkit-scrollbar {
 
 /* NavBar Styles */
 
-.navbar {
-    margin: 0 auto;
-}
-
-.navbar-background {
-    background-color: #E6E6FA;
-    width: 100vw;
-    height: 65px;
-    padding-bottom: 65px;
-}
-
-.logo-image {
-    position: absolute;
-    top: 8px;
-    left: 16px;
-}
-
 .text-container {
     display: flex;
     justify-content: center;
@@ -44,20 +27,7 @@ body::-webkit-scrollbar {
 /* Phone Styles */
 @media only screen and (max-width: 420px) {
     body {
-        background-color: #D6F8FA;    
-    }
-    
-    .navbar {
-        background-color: rgba(190, 190, 190, 0.8);
-    }
-    
-    .navbar-background {
-        display: block;
-    }
-
-    #navbarSupportedContent {
-        background-color: rgba(210, 210, 210, 1);
-        border-radius: 15px;
+        background-color: #D6F8FA;
     }
 
     .logo-image {
@@ -71,41 +41,28 @@ body::-webkit-scrollbar {
     .nav-item {
         text-align: center;
     }
-    
+
     .row {
         margin-top: 5vh;
         padding: 0 4px;
         display: flex;
         flex-wrap: wrap;
     }
-    
+
     .column {
         flex: 50%;
         padding: 0 4px;
     }
-    
+
     .column img {
         margin-top: 8px;
         vertical-align: middle;
         width: 100%;
     }
 }
-    
-    /* Tablet Styles */
+
+/* Tablet Styles */
 @media only screen and (min-width: 421px) and (max-width: 991px) {
-    .navbar {
-        background-color: rgba(190, 190, 190, 0.8);
-    }
-    
-    .navbar-background {
-        display: block;
-    }
-    
-    #navbarSupportedContent {
-        background-color: rgba(210, 210, 210, 1);
-        border-radius: 15px;
-        margin: 0 28vw;
-    }
 
     .logo-image {
         display: none;
@@ -118,48 +75,28 @@ body::-webkit-scrollbar {
     .nav-item {
         text-align: center;
     }
-    
+
     .row {
         margin-top: 5vh;
         padding: 0 4px;
         display: flex;
         flex-wrap: wrap;
     }
-    
+
     .column {
         flex: 50%;
         padding: 0 4px;
     }
-    
+
     .column img {
         margin-top: 8px;
         vertical-align: middle;
         width: 100%;
     }
 }
-    
-    /* Desktop Styles */
+
+/* Desktop Styles */
 @media only screen and (min-width: 992px) {
-    .navbar {
-        width: 832px;
-        height: 70px;
-        background: none;
-    }
-    
-    .navbar-background {
-        position: fixed;
-        top: 0px;
-        padding-bottom: 0;
-        z-index: 2;
-    }
-
-    .logo-image {
-        display: block;
-        position: fixed;
-        top: 3px;
-        z-index: 2;
-    }
-
     .navbar-brand {
         display: none;
     }
@@ -168,7 +105,7 @@ body::-webkit-scrollbar {
         width: 200px !important;
         text-align: center;
     }
-    
+
     .row {
         margin-top: 10vh;
         padding: 0 4px;
@@ -177,22 +114,22 @@ body::-webkit-scrollbar {
         margin-right: 10px;
         margin-left: 10px;
     }
-    
+
     .column {
         flex: 50%;
         padding: 0 4px;
     }
-    
+
     .column img {
         margin-top: 8px;
         vertical-align: middle;
         width: 100%;
     }
-    
+
     .text-container {
         margin-top: 15vh;
         font-size: 1.6em;
         font-weight: bold;
     }
-    
+
 }

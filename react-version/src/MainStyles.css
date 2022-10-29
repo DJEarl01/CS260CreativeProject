@@ -1,101 +1,49 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body::-webkit-scrollbar {
+  display: none;
 }
 
-/* NavBar background for when not in the main image */
+/* NavBar Styles */
+
+.navbar {
+  margin: 0 auto;
+}
+
 .navbar-background {
-  background-color: rgba(190, 190, 190, 0.95);
+  background-color: #E6E6FA;
   width: 100vw;
   height: 70px;
   padding-bottom: 70px;
-  z-index: 0;
 }
 
-/* Section for the main screen with the mountain pic and the inside stuff */
-.main-image-item-container {
-  position: relative;
-  text-align: center;
-  color: #fcfcfc;
-  height: 100vh;
-  max-height: 80vw;
-  overflow: hidden;
-}
-
-.example-photo {
+.logo-image {
   position: absolute;
-  left: 0;
+  top: 8px;
+  left: 16px;
 }
 
-.over-image-items {
-  position: absolute;
-  top: 46%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.beneath-navbar-break {
+  border-bottom: solid black 7px;
+  height: 107px;
 }
 
-#main-header {
-  padding: 10px;
+.about-us {
+  padding-bottom: 5vh;
 }
 
-#homeimage {
-  width: 100%;
+.newQ:hover {
+  background-color: #CBC3E3;
 }
 
-/* Options Section */
-.options-header {
-  margin: 40px;
-  text-align: center;
-}
-
-.base-options-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin: 0 auto;
-  width: 95vw;
-  align-items: center !important;
-  justify-content: center !important;
-}
-
-.option {
-  display: grid;
-  margin: 1em;
-  padding: 2em;
-  text-align: center;
-  background-color: #fafafa;
-  border-radius: 15px;
-}
-
-.option p {
-  font-size: 20px;
-}
-
-.option-link,
-.option-link:hover {
-  text-decoration: none;
-  color: black;
-  flex-basis: 30%;
-}
-
-.option-link:hover {
-  /* Addtonal Item here to put a background around a highlighted navbar item */
-  background-color: #c9c9c9;
-  border-radius: 15px;
-}
-
-.preview-ID {
-  margin: 0 auto;
-
+.newQ {
+  transition-duration: 0.3s;
 }
 
 .page-footer {
@@ -105,181 +53,492 @@ code {
 
 /* Phone Styles */
 @media only screen and (max-width: 420px) {
+  body {
+    background-color: #D6F8FA;
+  }
+
+  .navbar {
+    background-color: rgba(190, 190, 190, 0.8);
+  }
+
   .navbar-background {
-      display: block;
+    display: none;
   }
 
-  #main-header {
-      font-size: 5vw;
+  #navbarSupportedContent {
+    background-color: rgba(210, 210, 210, 1);
+    border-radius: 15px;
   }
 
-  h2 {
-      font-size: 3vw;
+  .logo-image {
+    display: none;
   }
 
-  .over-image-items {
-      width: 70vw;
+  .navbar-brand {
+    margin: -10px 0;
   }
 
-  .base-ID-wrapper {
-      width: 70vw;
+  .nav-item {
+    text-align: center;
   }
 
-  .overlayed {
-      z-index: 9;
-      top: 2.6vw;
-      left: 2.6vw;
-      width: 20vw !important;
+  /* Body Styles */
+
+  .description-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
-  .base-ID {
-      position: relative;
-      width: 51vw;
-      height: 33vw;
-      margin: 0 auto;
+  .headers {
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: solid black 5px;
+    border-radius: 15px;
+    background-color: #D6F8FA;
+    width: 85%;
   }
 
-  .example-photo {
-      width: 50vw;
+
+  .header-background {
+    margin-top: 10vh;
+    height: 30vh;
+    background-image: url("./images/ferpa_compliant.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
-  .preview-ID {
-      width: 70vw;
+  .body-text {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about-us {
+    margin: 5vh;
+    text-align: center;
+    justify-content: center;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 2;
+  }
+
+  .quoteBox {
+    padding-top: 10vh;
+    height: auto;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .intro {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    text-align-last: center;
+    padding: 10px;
+    margin: 5px;
+
+  }
+
+  .warning {
+    font-weight: lighter;
+    font-style: italic;
+    padding: 10px;
+  }
+
+  .newQ {
+    max-width: 100px;
+    max-height: 50px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 7px;
+
+  }
+
+  .quotes {
+    margin: 20px;
+    margin-top: 70px;
+    padding: 20px;
+    border: solid black 3px;
+    border-radius: 40px;
+  }
+
+  .box {
+    margin-bottom: 70px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 421px) and (max-width: 991px) {
-  .navbar-background {
-      display: block;
+  .navbar {
+    background-color: rgba(190, 190, 190, 0.8);
   }
 
-  #main-header {
-      font-size: 5vw;
+  .navbar-background {
+    display: none;
+  }
+
+  #navbarSupportedContent {
+    background-color: rgba(210, 210, 210, 1);
+    border-radius: 15px;
+    margin: 0 28vw;
+  }
+
+  .logo-image {
+    display: none;
+  }
+
+  .navbar-brand {
+    margin: -10px 0;
+  }
+
+  .nav-item {
+    text-align: center;
+  }
+
+  .description-text {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    height: 100vh;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .headers {
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: solid black 5px;
+    border-radius: 10px;
+    background-color: #D6F8FA;
+    width: 50%;
+  }
+
+
+  .header-background {
+    margin-top: 10vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 120vh;
+    background-image: url("./images/ferpa_compliant.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .body-text {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about-us {
+    margin: 5vh;
+    text-align: center;
+    justify-content: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 2;
+  }
+
+  p {
+    font-size: 20px
   }
 
   h2 {
-      font-size: 3vw;
+    margin-bottom: 20px;
   }
 
-  .over-image-items {
-      width: 70vw;
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
   }
 
-  .base-ID-wrapper {
-      width: 70vw;
+  .card-text {
+    font-size: 1.5em;
   }
 
-  .example-photo {
-      width: 49.5vw;
+  .card-title {
+    font-size: 1.8em;
   }
 
-  .overlayed {
-      z-index: 9;
-      top: 2.6vw;
-      left: 2.6vw;
-      width: 20vw;
+  .quoteBox {
+    padding-top: 10vh;
+    height: 100%;
+    max-height: 500px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 3;
   }
 
-  .base-ID {
-      position: relative;
-      width: 50vw;
-      height: 32vw;
-      margin: 0 auto;
+  .intro {
+    font-weight: bold;
+    padding: 15px;
+    margin: 5px;
+
   }
 
-  .preview-ID {
-      width: 70vw;
-      max-width: 300px;
+  .warning {
+    font-weight: lighter;
+    font-style: italic;
+    padding: 10px;
+  }
+
+  .newQ {
+    max-width: 100px;
+    max-height: 50px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 7px;
+
+  }
+
+  .quotes {
+    margin: 20px;
+    margin-top: 70px;
+    padding: 10px;
+    border: solid black 3px;
+    border-radius: 50px;
+  }
+
+  .quoteBox {
+    padding-top: 10vh;
+    height: 100%;
+    max-height: 700px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 3;
+  }
+
+  .intro {
+    font-weight: bold;
+    padding: 15px;
+    margin: 5px;
+
+  }
+
+  .warning {
+    font-weight: lighter;
+    font-style: italic;
+    padding: 10px;
+  }
+
+  .newQ {
+    max-width: 100px;
+    max-height: 45px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 7px;
+
+  }
+
+  .quotes {
+    margin: 15px;
+    margin-top: 30px;
+    padding: 10px;
+    border: solid black 3px;
+    border-radius: 50px;
+  }
+
+  .box {
+    margin-bottom: 20px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
   }
 }
 
-/* Desktop Styles (Small Screens) */
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
-  .navbar-background {
-      position: fixed;
-      top: 0px;
-      padding-bottom: 0;
+/* Desktop Styles */
+@media only screen and (min-width: 992px) {
+  .navbar {
+    width: 1000px;
+    height: 70px;
+    background: none;
   }
 
-  #main-header {
-      font-size: 2.5em;
-      margin-top: 70px;
+  .navbar-background {
+    position: fixed;
+    top: 0px;
+    padding-bottom: 0;
+    z-index: 2;
+  }
+
+  .logo-image {
+    display: block;
+    position: fixed;
+    top: 3px;
+    z-index: 10;
+  }
+
+  .navbar-brand {
+    display: none;
+  }
+
+  .nav-item {
+    width: 200px;
+    text-align: center;
+  }
+
+
+
+  /* Body Styles */
+
+  .description-text {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    height: 100vh;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 10;
+  }
+
+  .headers {
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: solid black 5px;
+    border-radius: 10px;
+    background-color: #D6F8FA;
+    width: 50%;
+  }
+
+
+  .header-background {
+    margin-top: 10vh;
+    margin-left: 5vw;
+    margin-right: 5vw;
+    height: 120vh;
+    background-image: url("./images/ferpa_compliant.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .body-text {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .about-us {
+    margin: 5vh;
+    text-align: center;
+    justify-content: center;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 2;
+  }
+
+  p {
+    font-size: 20px
   }
 
   h2 {
-      font-size: 1.5em;
+    margin-bottom: 20px;
   }
 
-  .over-image-items {
-      width: 70vw;
+  .card {
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
   }
 
-  .base-ID-wrapper {
-      width: 70vw;
+  .card-text {
+    font-size: 1.5em;
   }
 
-  .overlayed {
-      z-index: 9;
-      top: 22px;
-      left: 23px;
-      width: 169px;
+  .card-title {
+    font-size: 1.8em;
   }
 
-  .base-ID {
-      position: relative;
-      width: 428px;
-      height: 280px;
-      margin: 0 auto;
+  /* YE QUOTES STYLES */
+
+  .quoteBox {
+    padding-top: 10vh;
+    height: 100%;
+    max-height: 700px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    line-height: 3;
   }
 
-  .preview-ID {
-      width: 35vw;
-      max-width: 450px;
-  }
-}
+  .intro {
+    font-weight: bold;
+    padding: 15px;
+    margin: 5px;
 
-/* Desktop Styles (Larger Screens) */
-
-@media only screen and (min-width: 1200px) {
-  .navbar-background {
-      position: fixed;
-      top: 0px;
-      padding-bottom: 0;
   }
 
-  #main-header {
-      font-size: 2.5em;
-      margin-top: 70px;
+  .warning {
+    font-weight: lighter;
+    font-style: italic;
+    padding: 10px;
   }
 
-  h2 {
-      font-size: 1.5em;
+  .newQ {
+    max-width: 100px;
+    max-height: 50px;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 7px;
+
   }
 
-  .over-image-items {
-      width: 70vw;
+  .quotes {
+    margin: 20px;
+    margin-top: 70px;
+    padding: 10px;
+    border: solid black 3px;
+    border-radius: 50px;
   }
 
-  .base-ID-wrapper {
-      width: 70vw;
-  }
-
-  .overlayed {
-      z-index: 9;
-      top: 22px;
-      left: 23px;
-      width: 169px;
-  }
-
-  .base-ID {
-      position: relative;
-      width: 428px;
-      height: 280px;
-      margin: 0 auto;
-  }
-
-  .preview-ID {
-      width: 425px;
+  .box {
+    margin-bottom: 70px;
+    display: flex;
+    margin-right: auto;
+    margin-left: auto;
   }
 }

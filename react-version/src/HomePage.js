@@ -1,6 +1,7 @@
 import React from "react";
 import styles from './HomePage.module.css';
 
+
 class HomePage extends React.Component {
 
   constructor(props) {
@@ -40,10 +41,10 @@ class HomePage extends React.Component {
      mainCard = (
       <div>
         <h1 id={styles["main-header"]}>Looking For Some ID?</h1>
-        <div id="base-ID-wrapper">
-          <div class="base-ID">
-            <img src="./images/default-card.png" class="example-photo" alt='Default Card' />Image
-            <img src="https://xsgames.co/randomusers/avatar.php?g=male" class="example-photo overlayed" id="profile-photo" alt='Profile Download' />
+          <div id={styles["base-ID-wrapper"]}>
+          <div class={styles["base-ID"]}>
+            <img src="./images/default-card.png" class={styles["example-photo"]} alt='Default Card' />Image
+            <img src="https://xsgames.co/randomusers/avatar.php?g=male" class={styles["example-photo"]} id={styles["overlayed"]} alt='Profile Download' />
           </div>
         </div>
         <h2 style={{"color": "white"}}>Click the ID Card for a Surprise</h2>
@@ -52,11 +53,11 @@ class HomePage extends React.Component {
     } else {
        mainCard = (
         <div>
-          <h1 id="main-header" style={{"backgroundColor": "rgba(240,240,240,0.6)", "color": "black"}}>{this.state.kanyeQuote}</h1>
-          <div id="base-ID-wrapper">
-            <div class="base-ID">
-              <img src="./images/default-card.png" class="example-photo" alt='Default Card' />Image
-              <img src="./images/KanyeID.jpg" class="example-photo overlayed" id="profile-photo" alt='Profile Download' />
+          <h1 id={styles["main-header"]} style={{"backgroundColor": "rgba(240,240,240,0.6)", "color": "black"}}>{this.state.kanyeQuote}</h1>
+          <div id={styles["base-ID-wrapper"]}>
+            <div class={styles["base-ID"]}>
+              <img src="./images/default-card.png" class={styles["example-photo"]} alt='Default Card' />Image
+              <img src="./images/KanyeID.jpg" class={styles["example-photo"]} id={styles["overlayed"]} alt='Profile Download' />
             </div>
           </div>
           <h2 style={{"color": "white"}}>Click Again to Return to Normal</h2>
@@ -66,9 +67,9 @@ class HomePage extends React.Component {
 
     let backgroundImg = '';
     if (!this.state.wasKanyeClicked) {
-      backgroundImg = (<img src="./images/Y_mountain_darkened.jpeg" id="homeimage" alt="Background" />)
+      backgroundImg = (<img src="./images/Y_mountain_darkened.jpeg" id={styles["homeimage"]} alt="Background" />)
     } else {
-      backgroundImg = (<img src="./images/Kanye.webp" id="homeimage" alt="funny Background" />)
+      backgroundImg = (<img src="./images/Kanye.webp" id={styles["kanyehomeimage"]} alt="funny Background" />)
     }
 
     return (
@@ -106,64 +107,64 @@ class HomePage extends React.Component {
         </div >
 
         <div class={styles["navbar-background"]}></div>
-        <div class="main-image-item-container">
+        <div class={styles["main-image-item-container"]}>
           {backgroundImg}
           <a class="logo-image" href="./">
             <img src="./images/ID-Cardz-Logo.svg" width="60" height="60" alt='Card Logo' />
           </a>
-          <div class="over-image-items">
+          <div class={styles["over-image-items"]}>
             <button onClick={this.handleKanyeClick} style={{"background": "none", "border": "none", "outline": "none"}}>{mainCard}</button>
           </div>
         </div>
 
-        <h1 class="options-header">Current Options</h1>
+        <h1 class={styles["options-header"]}>Current Options</h1>
 
-        <div class="base-options-container">
-          <a href="./PRODUCT_PAGE.html" class="option-link">
-            <div class="option">
+        <div class={styles["base-options-container"]}>
+          <a href="./PRODUCT_PAGE.html" class={styles["option-link"]}>
+            <div class={styles["option"]}>
               <p>Option 1</p>
-              <img src="./images/default-card.png" class="preview-ID" alt='Preview ID Card' />
+              <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
 
             </div>
           </a>
-          <a href="./PRODUCT_PAGE.html" class="option-link">
-            <div class="option">
+          <a href="./PRODUCT_PAGE.html" class={styles["option-link"]}>
+            <div class={styles["option"]}>
               <p>Option 2</p>
-              <img src="./images/default-card.png" class="preview-ID" alt='Preview ID Card' />
+              <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
 
             </div>
           </a>
-          <a href="./PRODUCT_PAGE.html" class="option-link">
-            <div class="option">
+          <a href="./PRODUCT_PAGE.html" class={styles["option-link"]}>
+            <div class={styles["option"]}>
               <p>Option 3</p>
-              <img src="./images/default-card.png" class="preview-ID" alt='Preview ID Card' />
+              <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
 
             </div>
           </a>
-          <a href="./PRODUCT_PAGE.html" class="option-link">
-            <div class="option">
+          <a href="./PRODUCT_PAGE.html" class={styles["option-link"]}>
+            <div class={styles["option"]}>
               <p>Option 4</p>
-              <img src="./images/default-card.png" class="preview-ID" alt='Preview ID Card' />
+              <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
 
             </div>
           </a>
-          <a href="./PRODUCT_PAGE.html" class="option-link">
-            <div class="option">
+          <a href="./PRODUCT_PAGE.html" class={styles["option-link"]}>
+            <div class={styles["option"]}>
               <p>Option 5</p>
-              <img src="./images/default-card.png" class="preview-ID" alt='Preview ID Card' />
+              <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
 
             </div>
           </a>
-          <a href="./PRODUCT_PAGE.html" class="option-link">
-            <div class="option">
+          <a href="./PRODUCT_PAGE.html" class={styles["option-link"]}>
+            <div class={styles["option"]}>
               <p>Option 6</p>
-              <img src="./images/default-card.png" class="preview-ID" alt='Preview ID Card' />
+              <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
 
             </div>
           </a>
         </div>
 
-        <div class="page-footer">
+        <div class={styles["page-footer"]}>
           <p>DISCLAIMER: This site isn't real lol</p>
           <p>This site was proudly written by Kollin Rogers and Nik Earl</p>
           <a href="https://github.com/DJEarl01/CS260CreativeProject.git">Here's a Link to our GitHub</a>

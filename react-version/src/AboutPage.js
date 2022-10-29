@@ -1,4 +1,5 @@
 import React from "react";
+import "./MainStyles.css"
 
 class AboutPage extends React.Component {
 
