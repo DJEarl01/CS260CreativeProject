@@ -1,4 +1,5 @@
 import React from "react";
+import axios from 'axios';
 import styles from './HomePage.module.css';
 
 
@@ -8,11 +9,14 @@ class HomePage extends React.Component {
     super(props);
     this.state = {
       kanyeQuote: 'Test Quote',
-      wasKanyeClicked: false
+      wasKanyeClicked: false,
+      error: ''
     };
 
     this.handleKanyeClick = this.handleKanyeClick.bind(this);
     this.getKanyeQuote = this.getKanyeQuote.bind(this);
+    this.createCartItem = this.createCartItem.bind(this);
+    this.addToCart = this.addToCart.bind(this);
   }
 
   getKanyeQuote = () => {
@@ -33,6 +37,18 @@ class HomePage extends React.Component {
       this.getKanyeQuote();
       this.setState({wasKanyeClicked: true});
     }
+  }
+
+  createCartItem = async (currentName, currentPrice, currentImage) => {
+    try {
+      await axios.post("http://localhost:3000/cardzapi/cart", { itemName: currentName, itemPrice: currentPrice, itemImage: currentImage });
+    } catch (currentError) {
+      this.setState({error: "error adding an item to the cart: " + currentError});
+    }
+  }
+
+  addToCart = async (name, price, image = "./images/default-card.png") => {
+    await this.createCartItem(name, price, image);
   }
 
   render() {
@@ -113,51 +129,51 @@ class HomePage extends React.Component {
             <img src="./images/ID-Cardz-Logo.svg" width="60" height="60" alt='Card Logo' />
           </a>
           <div class={styles["over-image-items"]}>
-            <button onClick={this.handleKanyeClick} style={{"background": "none", "border": "none", "outline": "none"}}>{mainCard}</button>
+            <button onClick={() => {this.handleKanyeClick()}} style={{"background": "none", "border": "none", "outline": "none"}}>{mainCard}</button>
           </div>
         </div>
 
         <h1 class={styles["options-header"]}>Current Options</h1>
 
         <div class={styles["base-options-container"]}>
-          <a href="./PRODUCT_PAGE.html" class={styles["option-link"]}>
+          <a onClick={() => {this.addToCart("Option 1", 54.32)}} class={styles["option-link"]}>
             <div class={styles["option"]}>
               <p>Option 1</p>
               <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
 
             </div>
           </a>
-          <a href="./PRODUCT_PAGE.html" class={styles["option-link"]}>
+          <a onClick={() => {this.addToCart("Option 2", 66.66)}} class={styles["option-link"]}>
             <div class={styles["option"]}>
               <p>Option 2</p>
               <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
 
             </div>
           </a>
-          <a href="./PRODUCT_PAGE.html" class={styles["option-link"]}>
+          <a onClick={() => {this.addToCart("Option 3", 12.34)}} class={styles["option-link"]}>
             <div class={styles["option"]}>
               <p>Option 3</p>
               <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
 
             </div>
           </a>
-          <a href="./PRODUCT_PAGE.html" class={styles["option-link"]}>
+          <a onClick={() => {this.addToCart("Option 4", 10000000.00)}} class={styles["option-link"]}>
             <div class={styles["option"]}>
               <p>Option 4</p>
               <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
 
             </div>
           </a>
-          <a href="./PRODUCT_PAGE.html" class={styles["option-link"]}>
+          <a onClick={() => {this.addToCart("Option 5", 54.65)}} class={styles["option-link"]}>
             <div class={styles["option"]}>
               <p>Option 5</p>
               <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
 
             </div>
           </a>
-          <a href="./PRODUCT_PAGE.html" class={styles["option-link"]}>
+          <a onClick={() => {this.addToCart("President Worthen", 95.22)}} class={styles["option-link"]}>
             <div class={styles["option"]}>
-              <p>Option 6</p>
+              <p>President Worthen</p>
               <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
 
             </div>

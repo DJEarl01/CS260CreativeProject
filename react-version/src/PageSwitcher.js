@@ -11,11 +11,11 @@ function PageSwitcher() {
     return (
         <Router>
         <Routes>
-            <Route exact path='CS260CreativeProject/react-version/build/' element={<HomePage />} />
-            <Route path='CS260CreativeProject/react-version/build/about' element={<AboutPage />} />
-            <Route path='CS260CreativeProject/react-version/build/cart' element={<CartPage />} />
-            <Route path='CS260CreativeProject/react-version/build/props' element={<PropsPage />} />
-            <Route path='CS260CreativeProject/react-version/build/ye-quotes' element={<YeQuotesPage />} />
+            <Route exact path='/' element={<HomePage />} />
+            <Route path='/about' element={<AboutPage />} />
+            <Route path='/cart' element={<CartPage />} />
+            <Route path='/props' element={<PropsPage />} />
+            <Route path='/ye-quotes' element={<YeQuotesPage />} />
         </Routes>
         </Router>
     );

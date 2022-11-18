@@ -10,7 +10,6 @@
 
 # production
 /build
-/src/PageSwitcher.js
 
 # misc
 .DS_Store
