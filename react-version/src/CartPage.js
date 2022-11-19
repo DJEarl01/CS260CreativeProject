@@ -9,14 +9,23 @@ function CartPage() {
 
         ]
     });
+    const [update, setUpdate] = useState(Boolean);
     const [error, setError] = useState("");
+    const [totalPrice, setTotalPrice] = useState(Number);
 
-    const fetchCart = async () => {
+    const fetchCart = async (state) => {
         try {
-            const response = await axios.get("http://localhost:3000/cardzapi/cart");
+            const response = await axios.get("http://localhost:3002/cardzapi/cart");
             setCart(response.data);
-            console.log(setCart);
+            console.log(cart);
+            setUpdate(false);
             setError("");
+            setTotalPrice(10.0);
+            let totalPriceAdder = 0;
+            cart.cart.forEach(element => {
+                totalPriceAdder += element.itemPrice;
+            });
+            setTotalPrice(totalPriceAdder);
         } catch (error) {
             setError("error retrieving cart: " + error);
         }
@@ -24,20 +33,25 @@ function CartPage() {
 
     const deleteOneCartItem = async (cartItem) => {
         try {
-          await axios.delete("http://localhost:3000/cardzapi/cart/" + cartItem.id);
+            await axios.delete("http://localhost:3002/cardzapi/cart/" + cartItem.id);
         } catch (error) {
-          setError("error deleting a cart item" + error);
+            setError("error deleting a cart item" + error);
         }
-      }
+    }
+
+    useEffect(() => {
+        setUpdate(true);
+    }, [])
 
     // fetch cart data
     useEffect(() => {
         fetchCart();
-    }, []);
+    }, [update]);
 
     const deleteCartItem = async (cartItem) => {
         await deleteOneCartItem(cartItem);
         fetchCart();
+        setUpdate(true);
     }
 
     return (
@@ -85,22 +99,22 @@ function CartPage() {
                         {error}
                         {cart.cart.map(cartItem => (
                             <a href="#" class="item-in-cart">
-                                <h2 class="item-header">{cartItem.itemName}  <button onClick={e => deleteCartItem(cartItem)}>Delete</button></h2>
-                                <h3 class="item-price">${cartItem.itemPrice}</h3>
-                                <img src={cartItem.itemImage} class="preview-image" />
+                                <h2 class="item-header">{cartItem.itemName}</h2>
+                                <h3 class="item-price"><button className="delete-button" onClick={e => deleteCartItem(cartItem)}>Delete</button>${cartItem.itemPrice}</h3>
+                                <img src={cartItem.itemImage} className="preview-image" />
                             </a>
                         ))}
-                        <br/>
+                        <br />
                         <p>Feel free to add items to the cart from the home page!</p>
                     </div>
-                    <div class="subtotal-checkout">
-                        <h2>Subtotal: $40.00</h2>
-                        <button onClick={e => fetchCart()}>Check Out</button>
+                    <div className="subtotal-checkout">
+                        <h2>Subtotal: ${totalPrice}</h2>
+                        <button className="checkout-button" onClick={e => fetchCart()}>Check Out</button>
                     </div>
                 </div>
 
 
-                <div class="page-footer">
+                <div className="page-footer">
                     <p>DISCLAIMER: This site isn't real lol</p>
                     <p>This site was proudly written by Kollin Rogers and Nik Earl</p>
                     <a href="https://github.com/DJEarl01/CS260CreativeProject.git">Here's a Link to our GitHub</a>

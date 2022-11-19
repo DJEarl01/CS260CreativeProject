@@ -10,6 +10,71 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+
+/* Popup container */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* The actual popup (appears on top) */
+.popup .popuptext {
+  visibility: visible;
+  -webkit-animation: fadeOut 1s;
+  animation: fadeOut 1s;
+  width: 500px;
+  background-color: #359c00;
+  color: white;
+  opacity: 0.9;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 20px;
+  position: fixed;
+  z-index: 1;
+  bottom: 20px;
+  left: 50vw;
+  margin-left: -250px;
+  font-size: 24px;
+}
+
+/* Toggle this class when clicking on the popup container (hide and show the popup) */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+.popup .hide {
+  visibility: hidden;
+}
+
+.popup .error {
+  background-color: red;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 0.9;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:0.9 ;}
+}
+
+/* Add animation (fade out the popup) */
+@-webkit-keyframes fadeOut {
+  from {opacity: 0.9;}
+  to {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  from {opacity: 0.9;}
+  to {opacity:0 ;}
+}
+
 /* NavBar Styles */
 
 .navbar {

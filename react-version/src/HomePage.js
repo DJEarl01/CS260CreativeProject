@@ -10,13 +10,15 @@ class HomePage extends React.Component {
     this.state = {
       kanyeQuote: 'Test Quote',
       wasKanyeClicked: false,
-      error: ''
+      error: '',
+      popupHidden: ''
     };
 
     this.handleKanyeClick = this.handleKanyeClick.bind(this);
     this.getKanyeQuote = this.getKanyeQuote.bind(this);
     this.createCartItem = this.createCartItem.bind(this);
     this.addToCart = this.addToCart.bind(this);
+    this.alertUserOfCartAddition = this.alertUserOfCartAddition.bind(this);
   }
 
   getKanyeQuote = () => {
@@ -26,24 +28,53 @@ class HomePage extends React.Component {
         return response.json();
       }).then(function (json) {
         let grabbedResult = json.quote;
-        this.setState({kanyeQuote: grabbedResult});
+        this.setState({ kanyeQuote: grabbedResult });
       }.bind(this));
   };
 
   handleKanyeClick() {
     if (this.state.wasKanyeClicked) {
-      this.setState({wasKanyeClicked: false});
+      this.setState({ wasKanyeClicked: false });
     } else {
       this.getKanyeQuote();
-      this.setState({wasKanyeClicked: true});
+      this.setState({ wasKanyeClicked: true });
+    }
+  }
+
+  alertUserOfCartAddition(name, isError) {
+    var popup = document.getElementById("cartAddedPopup");
+    popup.innerHTML = name + " Added To Cart";
+    popup.classList.toggle("show");
+    if (this.state.popupHidden) {
+      setTimeout(function () {
+        popup.classList.toggle("hide");
+        if (isError) {
+          popup.classList.toggle("error");
+        }
+      }, 950);
+      this.setState({ popupHidden: false });
+    } else {
+      popup.classList.toggle("hide");
+      if (isError) {
+        popup.classList.toggle("error");
+      }
+      this.setState({ popupHidden: true });
     }
   }
 
   createCartItem = async (currentName, currentPrice, currentImage) => {
     try {
-      await axios.post("http://localhost:3000/cardzapi/cart", { itemName: currentName, itemPrice: currentPrice, itemImage: currentImage });
+      await axios.post("http://localhost:3002/cardzapi/cart", { itemName: currentName, itemPrice: currentPrice, itemImage: currentImage });
+      this.alertUserOfCartAddition(currentName, false);
+      setTimeout(() => {
+        this.alertUserOfCartAddition(currentName, false);
+      }, 3000);
     } catch (currentError) {
-      this.setState({error: "error adding an item to the cart: " + currentError});
+      this.setState({ error: currentError + ": Couldn't Get " + currentName + " "});
+      this.alertUserOfCartAddition((currentError + ": Couldn't Get " + currentName + " "), true);
+      setTimeout(() => {
+        this.alertUserOfCartAddition((currentError + ": Couldn't Get " + currentName + " "), true);
+      }, 3000);
     }
   }
 
@@ -54,29 +85,29 @@ class HomePage extends React.Component {
   render() {
     let mainCard = '';
     if (!this.state.wasKanyeClicked) {
-     mainCard = (
-      <div>
-        <h1 id={styles["main-header"]}>Looking For Some ID?</h1>
-          <div id={styles["base-ID-wrapper"]}>
-          <div class={styles["base-ID"]}>
-            <img src="./images/default-card.png" class={styles["example-photo"]} alt='Default Card' />Image
-            <img src="https://xsgames.co/randomusers/avatar.php?g=male" class={styles["example-photo"]} id={styles["overlayed"]} alt='Profile Download' />
-          </div>
-        </div>
-        <h2 style={{"color": "white"}}>Click the ID Card for a Surprise</h2>
-      </div>
-    )
-    } else {
-       mainCard = (
+      mainCard = (
         <div>
-          <h1 id={styles["main-header"]} style={{"backgroundColor": "rgba(240,240,240,0.6)", "color": "black"}}>{this.state.kanyeQuote}</h1>
+          <h1 id={styles["main-header"]}>Looking For Some ID?</h1>
+          <div id={styles["base-ID-wrapper"]}>
+            <div class={styles["base-ID"]}>
+              <img src="./images/default-card.png" class={styles["example-photo"]} alt='Default Card' />Image
+              <img src="https://xsgames.co/randomusers/avatar.php?g=male" class={styles["example-photo"]} id={styles["overlayed"]} alt='Profile Download' />
+            </div>
+          </div>
+          <h2 style={{ "color": "white" }}>Click the ID Card for a Surprise</h2>
+        </div>
+      )
+    } else {
+      mainCard = (
+        <div>
+          <h1 id={styles["main-header"]} style={{ "backgroundColor": "rgba(240,240,240,0.6)", "color": "black" }}>{this.state.kanyeQuote}</h1>
           <div id={styles["base-ID-wrapper"]}>
             <div class={styles["base-ID"]}>
               <img src="./images/default-card.png" class={styles["example-photo"]} alt='Default Card' />Image
               <img src="./images/KanyeID.jpg" class={styles["example-photo"]} id={styles["overlayed"]} alt='Profile Download' />
             </div>
           </div>
-          <h2 style={{"color": "white"}}>Click Again to Return to Normal</h2>
+          <h2 style={{ "color": "white" }}>Click Again to Return to Normal</h2>
         </div>
       )
     }
@@ -129,53 +160,68 @@ class HomePage extends React.Component {
             <img src="./images/ID-Cardz-Logo.svg" width="60" height="60" alt='Card Logo' />
           </a>
           <div class={styles["over-image-items"]}>
-            <button onClick={() => {this.handleKanyeClick()}} style={{"background": "none", "border": "none", "outline": "none"}}>{mainCard}</button>
+            <button onClick={() => { this.handleKanyeClick() }} style={{ "background": "none", "border": "none", "outline": "none" }}>{mainCard}</button>
           </div>
         </div>
 
         <h1 class={styles["options-header"]}>Current Options</h1>
-
+        <h3 class={styles["options-subheader"]}>Click One To Add To Cart</h3>
+        <div class="popup" onClick={() => { this.alertUserOfCartAddition("Queen Latifah's Mom's Hairdresser") }}>
+          <span class="popuptext hide" id="cartAddedPopup">Popup text...</span>
+        </div>
         <div class={styles["base-options-container"]}>
-          <a onClick={() => {this.addToCart("Option 1", 54.32)}} class={styles["option-link"]}>
+          <a onClick={() => { this.addToCart("Kanye West", 54.32) }} class={styles["option-link"]}>
             <div class={styles["option"]}>
-              <p>Option 1</p>
+              <p>Kanye West</p>
               <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
-
             </div>
           </a>
-          <a onClick={() => {this.addToCart("Option 2", 66.66)}} class={styles["option-link"]}>
+          <a onClick={() => { this.addToCart("Dan Smith", 66.66) }} class={styles["option-link"]}>
             <div class={styles["option"]}>
-              <p>Option 2</p>
+              <p>Dan Smith</p>
               <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
-
             </div>
           </a>
-          <a onClick={() => {this.addToCart("Option 3", 12.34)}} class={styles["option-link"]}>
+          <a onClick={() => { this.addToCart("Mackquinzeigh MarkPatJoeBillDinosaur", 12.34) }} class={styles["option-link"]}>
             <div class={styles["option"]}>
-              <p>Option 3</p>
+              <p>Mackquinzeigh MarkPatJoeBillDinosaur</p>
               <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
-
             </div>
           </a>
-          <a onClick={() => {this.addToCart("Option 4", 10000000.00)}} class={styles["option-link"]}>
+          <a onClick={() => { this.addToCart("Meghan Trainor", 10000000.00) }} class={styles["option-link"]}>
             <div class={styles["option"]}>
-              <p>Option 4</p>
+              <p>Meghan Trainor</p>
               <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
-
             </div>
           </a>
-          <a onClick={() => {this.addToCart("Option 5", 54.65)}} class={styles["option-link"]}>
+          <a onClick={() => { this.addToCart("Joseph Smith", 54.65) }} class={styles["option-link"]}>
             <div class={styles["option"]}>
-              <p>Option 5</p>
+              <p>Joseph Smith</p>
               <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
-
             </div>
           </a>
-          <a onClick={() => {this.addToCart("President Worthen", 95.22)}} class={styles["option-link"]}>
+          <a onClick={() => { this.addToCart("President Worthen", 95.22) }} class={styles["option-link"]}>
             <div class={styles["option"]}>
               <p>President Worthen</p>
               <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
-
+            </div>
+          </a>
+          <a onClick={() => { this.addToCart("Crayon Gibson", 15.00) }} class={styles["option-link"]}>
+            <div class={styles["option"]}>
+              <p>Crayon Gibson</p>
+              <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
+            </div>
+          </a>
+          <a onClick={() => { this.addToCart("Mark Peanus", 954.21) }} class={styles["option-link"]}>
+            <div class={styles["option"]}>
+              <p>Mark Peanus</p>
+              <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
+            </div>
+          </a>
+          <a onClick={() => { this.addToCart("Kippy Yee", 12.95) }} class={styles["option-link"]}>
+            <div class={styles["option"]}>
+              <p>Kippy Yee</p>
+              <img src="./images/default-card.png" class={styles["preview-ID"]} alt='Preview ID Card' />
             </div>
           </a>
         </div>
