@@ -15,7 +15,7 @@ function CartPage() {
 
     const fetchCart = async (state) => {
         try {
-            const response = await axios.get("http://localhost:3002/cardzapi/cart");
+            const response = await axios.get("http://localhost:3002/api/cart");
             setCart(response.data);
             console.log(cart);
             setUpdate(false);
@@ -33,7 +33,7 @@ function CartPage() {
 
     const deleteOneCartItem = async (cartItem) => {
         try {
-            await axios.delete("http://localhost:3002/cardzapi/cart/" + cartItem.id);
+            await axios.delete("http://localhost:3002/api/cart/" + cartItem.id);
         } catch (error) {
             setError("error deleting a cart item" + error);
         }
@@ -80,7 +80,7 @@ function CartPage() {
                                 <a class="nav-link" href="./props">Our Lineage</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="./ye-quotes">Ye</a>
+                                <a class="nav-link" href="./product">Product</a>
                             </li>
                         </ul>
                     </div>

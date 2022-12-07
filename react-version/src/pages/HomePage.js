@@ -64,7 +64,7 @@ class HomePage extends React.Component {
 
   createCartItem = async (currentName, currentPrice, currentImage) => {
     try {
-      await axios.post("http://localhost:3002/cardzapi/cart", { itemName: currentName, itemPrice: currentPrice, itemImage: currentImage });
+      await axios.post("http://teamjesus4ever.org:3000/api/cart", { itemName: currentName, itemPrice: currentPrice, itemImage: currentImage });
       this.alertUserOfCartAddition(currentName, false);
       setTimeout(() => {
         this.alertUserOfCartAddition(currentName, false);
@@ -146,7 +146,7 @@ class HomePage extends React.Component {
                   <a class="nav-link" href="./props">Our Lineage</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./ye-quotes">Ye</a>
+                  <a class="nav-link" href="./product">Product</a>
                 </li>
               </ul>
             </div>

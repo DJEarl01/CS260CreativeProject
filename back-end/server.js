@@ -35,7 +35,7 @@ cartSchema.set('toJSON', {
 
 const CartItem = mongoose.model('CartItem', cartSchema);
 
-app.get('/cardzapi/cart', async (req, res) => {
+app.get('/api/cart', async (req, res) => {
     try {
         let allCartItems = await CartItem.find();
         res.send({cart: allCartItems});
@@ -46,7 +46,7 @@ app.get('/cardzapi/cart', async (req, res) => {
     }
 });
 
-app.post('/cardzapi/cart', async (req, res) => {
+app.post('/api/cart', async (req, res) => {
     const cartItem = new CartItem({
         itemName: req.body.itemName,
         itemPrice: req.body.itemPrice,
@@ -62,7 +62,7 @@ app.post('/cardzapi/cart', async (req, res) => {
     }
 });
 
-app.delete('/cardzapi/cart/:id', async (req, res) => {
+app.delete('/api/cart/:id', async (req, res) => {
     try {
         await CartItem.deleteOne({
             _id: req.params.id
@@ -75,4 +75,4 @@ app.delete('/cardzapi/cart/:id', async (req, res) => {
     }
 });
 
-app.listen(3002, () => console.log('Server listening on port 3002!'));
+app.listen(3000, () => console.log('Server listening on port 3000!'));

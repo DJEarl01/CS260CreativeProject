@@ -30,7 +30,7 @@ class PropsPage extends React.Component {
                                     <a class="nav-link" href="./props">Our Lineage<span class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="./ye-quotes">Ye</a>
+                                    <a class="nav-link" href="./product">Product</a>
                                 </li>
                             </ul>
                         </div>

@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 import React from 'react';
-import HomePage from './HomePage';
-import AboutPage from './AboutPage';
-import CartPage from './CartPage';
-import PropsPage from './PropsPage';
-import YeQuotesPage from './YeQuotesPage';
+import HomePage from './pages/HomePage';
+import AboutPage from './pages/AboutPage';
+import CartPage from './pages/CartPage';
+import PropsPage from './pages/PropsPage';
+import ProductPage from './pages/YeQuotesPage';
 
 function PageSwitcher() {
     return (
@@ -15,7 +15,8 @@ function PageSwitcher() {
             <Route path='/about' element={<AboutPage />} />
             <Route path='/cart' element={<CartPage />} />
             <Route path='/props' element={<PropsPage />} />
-            <Route path='/ye-quotes' element={<YeQuotesPage />} />
+            <Route path='/product' element={<ProductPage />} />
+
         </Routes>
         </Router>
     );

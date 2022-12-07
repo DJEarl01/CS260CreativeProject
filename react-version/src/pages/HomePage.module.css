@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 #main-header {
@@ -98,6 +98,33 @@
     /* Addtonal Item here to put a background around a highlighted navbar item */
     background-color: #c9c9c9;
     border-radius: 15px;
+}
+
+.option-link-product {
+    flex: 50%;
+    text-decoration: none;
+    color: black;
+    margin-top: 30vh;
+
+}
+
+.description {
+    flex: 50%;
+    align-items: center !important;
+    text-align: center;
+
+}
+
+.base-options-container-product {
+    display: flex;
+    flex-wrap: wrap;
+    width: 95vw;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.more-products {
+    margin-top: 5vh !important;
 }
 
 .preview-ID {

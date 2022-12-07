@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './MainStyles.css';
+import './pages/MainStyles.css';
 import Page from './PageSwitcher';
 import reportWebVitals from './reportWebVitals';
 
