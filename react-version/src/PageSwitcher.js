@@ -7,6 +7,7 @@ import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import CartPage from './CartPage';
 import PropsPage from './PropsPage';
+import ProductPage from './pages/YeQuotesPage';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
 
@@ -62,6 +63,7 @@ render() {
                 <Route path='/props' element={<PropsPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
                 <Route path='/login' element={<LoginPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
                 <Route path='/signup' element={<SignUpPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
+                <Route path='product' ellement={<ProductPage />} />
             </Routes>
         </Router>
     );
