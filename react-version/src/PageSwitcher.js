@@ -55,12 +55,11 @@ class PageSwitcher extends Component {
         return (
             <Router>
                 <Routes>
-                    <Route exact path='/' element={<HomePage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
-                    <Route path='/about' element={<AboutPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
-                    <Route path='/cart' element={<CartPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
-                    <Route path='/props' element={<PropsPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
-                    <Route path='/login' element={<LoginPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
-                    <Route path='/signup' element={<SignUpPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
+                    <Route exact path='/' element={<HomePage />} />
+                    <Route path='/about' element={<AboutPage />} />
+                    <Route path='/cart' element={<CartPage />} />
+                    <Route path='/props' element={<PropsPage />} />
+                    <Route path='/ye-quotes' element={<YeQuotesPage />} />
                 </Routes>
             </Router>
         );
