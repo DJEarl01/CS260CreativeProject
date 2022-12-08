@@ -27,7 +27,7 @@ class LoginForm extends Component {
         console.log('handleSubmit')
 
         axios
-            .post('http://localhost:3005/user/login', {
+            .post('/user/login', {
                 username: this.state.username,
                 password: this.state.password
             })
@@ -42,7 +42,7 @@ class LoginForm extends Component {
                     })
                     // update the state to redirect to home
                     this.setState({
-                        redirectTo: '/'
+                        redirectTo: '/CS260CreativeProject/react-version/build/'
                     })
                 }
             }).catch(error => {
@@ -57,7 +57,7 @@ class LoginForm extends Component {
         console.log("handleSignup");
         // update the state to redirect to signup page
         this.setState({
-            redirectTo: '/signup'
+            redirectTo: '/CS260CreativeProject/react-version/build/signup'
         })
     }
 

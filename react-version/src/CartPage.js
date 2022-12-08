@@ -16,7 +16,7 @@ function CartPage() {
 
     const fetchCart = async (state) => {
         try {
-            const response = await axios.get("http://localhost:3005/cardzapi/cart");
+            const response = await axios.get("/api/cart");
             setCart(response.data);
             console.log(cart);
             setUpdate(false);
@@ -34,7 +34,7 @@ function CartPage() {
 
     const deleteOneCartItem = async (cartItem) => {
         try {
-            await axios.delete("http://localhost:3005/cardzapi/cart/" + cartItem.id);
+            await axios.delete("/api/cart/" + cartItem.id);
         } catch (error) {
             setError("error deleting a cart item" + error);
         }
@@ -58,7 +58,7 @@ function CartPage() {
     const logout = (event) => {
         event.preventDefault()
         console.log('logging out')
-        axios.post('http://localhost:3005/user/logout').then(response => {
+        axios.post('/user/logout').then(response => {
           console.log(response.data)
           if (response.status === 200) {
             this.props.updateUser({
@@ -102,16 +102,7 @@ function CartPage() {
                                 <a class="nav-link" href="./props">Our Lineage</a>
                             </li>
                             <li class="nav-item">
-                                {/* greet user if logged in: */}
-                                {loggedIn ?
-                                    <a class="nav-link" onClick={logout}>
-                                        Welcome back, {username}
-                                    </a>
-                                    :
-                                    <a class="nav-link" href="./login">
-                                        Login
-                                    </a>
-                                }
+                                <a class="nav-link" href="./product">Product</a>
                             </li>
                         </ul>
                     </div>

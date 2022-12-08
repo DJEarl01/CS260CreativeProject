@@ -68,7 +68,7 @@ class HomePage extends React.Component {
 
   createCartItem = async (currentName, currentPrice, currentImage) => {
     try {
-      await axios.post("http://localhost:3005/cardzapi/cart", { itemName: currentName, itemPrice: currentPrice, itemImage: currentImage });
+      await axios.post("/api/cart", { itemName: currentName, itemPrice: currentPrice, itemImage: currentImage });
       this.alertUserOfCartAddition(currentName, false);
       setTimeout(() => {
         this.alertUserOfCartAddition(currentName, false);
@@ -89,7 +89,7 @@ class HomePage extends React.Component {
   logout(event) {
     event.preventDefault()
     console.log('logging out')
-    axios.post('http://localhost:3005/user/logout').then(response => {
+    axios.post('/user/logout').then(response => {
       console.log(response.data)
       if (response.status === 200) {
         this.props.updateUser({

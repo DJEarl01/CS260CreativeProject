@@ -7,9 +7,9 @@ import HomePage from './HomePage';
 import AboutPage from './AboutPage';
 import CartPage from './CartPage';
 import PropsPage from './PropsPage';
-import ProductPage from './pages/YeQuotesPage';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
+import ProductPage from './YeQuotesPage';
 
 class PageSwitcher extends Component {
 constructor() {
@@ -33,7 +33,7 @@ updateUser(userObject) {
 }
 
 getLogin() {
-    axios.get('http://localhost:3005/user/').then(response => {
+    axios.get('/user/').then(response => {
         console.log('Get user response: ')
         console.log(response.data)
         if (response.data.user) {
@@ -57,13 +57,13 @@ render() {
     return (
         <Router>
             <Routes>
-                <Route exact path='/' element={<HomePage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
-                <Route path='/about' element={<AboutPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
-                <Route path='/cart' element={<CartPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
-                <Route path='/props' element={<PropsPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
-                <Route path='/login' element={<LoginPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
-                <Route path='/signup' element={<SignUpPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
-                <Route path='product' ellement={<ProductPage />} />
+                <Route exact path='CS260CreativeProject/react-version/build/' element={<HomePage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
+                <Route path='CS260CreativeProject/react-version/build/about' element={<AboutPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
+                <Route path='CS260CreativeProject/react-version/build/cart' element={<CartPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
+                <Route path='CS260CreativeProject/react-version/build/props' element={<PropsPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
+                <Route path='CS260CreativeProject/react-version/build/login' element={<LoginPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
+                <Route path='CS260CreativeProject/react-version/build/signup' element={<SignUpPage updateUser={this.updateUser} loggedIn={this.state.loggedIn} username={this.state.username}/>} />
+                <Route path='CS260CreativeProject/react-version/build/product' element={<ProductPage />} />
             </Routes>
         </Router>
     );
