@@ -1,33 +1,69 @@
 const express = require('express');
-const bodyParser = require("body-parser");
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const morgan = require('morgan');
+const passport = require('./passport');
+// Route requires
+const user = require('./routes/user');
 
 const app = express();
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-  extended: false
+    extended: false
 }));
 
 app.use(express.static('public'));
 
-const mongoose = require('mongoose');
+// connect to user database
 
-// connect to the database
-mongoose.connect('mongodb://localhost:27017/cartStore', {
-  useUnifiedTopology: true,
-  useNewUrlParser: true
-});
+const clientP = mongoose.connect(
+    'mongodb://localhost:27017/simple-mern-passport',
+    { useNewUrlParser: true, useUnifiedTopology: true }
+  ).then(m => m.connection.getClient())
+
+// MIDDLEWARE
+app.use(
+    bodyParser.urlencoded({
+        extended: false
+    })
+);
+
+app.use(bodyParser.json());
+
+app.use(session({
+    secret: 'fraggle-rock', //pick a random string to make the hash that is generated secure
+    resave: false,
+    saveUninitialized: false,
+    store: MongoStore.create({
+        clientPromise: clientP,
+        dbName: "simple-mern-passport",
+        stringify: false,
+        autoRemove: 'interval',
+        autoRemoveInterval: 1
+    })
+}));
+
+// Passport
+app.use(passport.initialize())
+app.use(passport.session()) // calls the deserializeUser
+
+// Routes
+app.use('/user', user)
 
 //LOADING IN THE CART SCHEMA
 const cartSchema = new mongoose.Schema({
-    itemName: String, 
-    itemPrice: Number, 
+    itemName: String,
+    itemPrice: Number,
     itemImage: String,
 });
 
 cartSchema.virtual('id')
-  .get(function() {
-    return this._id.toHexString();
-});
+    .get(function () {
+        return this._id.toHexString();
+    });
 
 cartSchema.set('toJSON', {
     virtuals: true
@@ -38,7 +74,7 @@ const CartItem = mongoose.model('CartItem', cartSchema);
 app.get('/cardzapi/cart', async (req, res) => {
     try {
         let allCartItems = await CartItem.find();
-        res.send({cart: allCartItems});
+        res.send({ cart: allCartItems });
         console.log("Returned Full Cart");
     } catch (error) {
         console.log(error);
@@ -75,4 +111,4 @@ app.delete('/cardzapi/cart/:id', async (req, res) => {
     }
 });
 
-app.listen(3002, () => console.log('Server listening on port 3002!'));
+app.listen(3005, () => console.log('Server listening on port 3005!'));

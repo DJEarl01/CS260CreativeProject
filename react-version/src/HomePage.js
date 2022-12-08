@@ -1,17 +1,19 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 import axios from 'axios';
 import styles from './HomePage.module.css';
 
 
 class HomePage extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
       kanyeQuote: 'Test Quote',
       wasKanyeClicked: false,
       error: '',
-      popupHidden: ''
+      popupHidden: '',
+      loggedIn: false,
+      username: null
     };
 
     this.handleKanyeClick = this.handleKanyeClick.bind(this);
@@ -19,6 +21,7 @@ class HomePage extends React.Component {
     this.createCartItem = this.createCartItem.bind(this);
     this.addToCart = this.addToCart.bind(this);
     this.alertUserOfCartAddition = this.alertUserOfCartAddition.bind(this);
+    this.logout = this.logout.bind(this)
   }
 
   getKanyeQuote = () => {
@@ -39,6 +42,7 @@ class HomePage extends React.Component {
       this.getKanyeQuote();
       this.setState({ wasKanyeClicked: true });
     }
+    this.updateUser();
   }
 
   alertUserOfCartAddition(name, isError) {
@@ -64,13 +68,13 @@ class HomePage extends React.Component {
 
   createCartItem = async (currentName, currentPrice, currentImage) => {
     try {
-      await axios.post("http://localhost:3002/cardzapi/cart", { itemName: currentName, itemPrice: currentPrice, itemImage: currentImage });
+      await axios.post("http://localhost:3005/cardzapi/cart", { itemName: currentName, itemPrice: currentPrice, itemImage: currentImage });
       this.alertUserOfCartAddition(currentName, false);
       setTimeout(() => {
         this.alertUserOfCartAddition(currentName, false);
       }, 3000);
     } catch (currentError) {
-      this.setState({ error: currentError + ": Couldn't Get " + currentName + " "});
+      this.setState({ error: currentError + ": Couldn't Get " + currentName + " " });
       this.alertUserOfCartAddition((currentError + ": Couldn't Get " + currentName + " "), true);
       setTimeout(() => {
         this.alertUserOfCartAddition((currentError + ": Couldn't Get " + currentName + " "), true);
@@ -82,7 +86,28 @@ class HomePage extends React.Component {
     await this.createCartItem(name, price, image);
   }
 
+  logout(event) {
+    event.preventDefault()
+    console.log('logging out')
+    axios.post('http://localhost:3005/user/logout').then(response => {
+      console.log(response.data)
+      if (response.status === 200) {
+        this.props.updateUser({
+          loggedIn: false,
+          username: null
+        })
+      }
+    }).catch(error => {
+        console.log('Logout error: ' + error)
+    })
+  }
+
   render() {
+    const loggedIn = this.props.loggedIn;
+    const username = this.props.username;
+    console.log('navbar render, props: ')
+    console.log(this.props);
+
     let mainCard = '';
     if (!this.state.wasKanyeClicked) {
       mainCard = (
@@ -146,7 +171,16 @@ class HomePage extends React.Component {
                   <a class="nav-link" href="./props">Our Lineage</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./ye-quotes">Ye</a>
+                  {/* greet user if logged in: */}
+                  {loggedIn ?
+                    <a class="nav-link" onClick={this.logout}>
+                      Welcome back, {username}
+                    </a>
+                    : 
+                    <a class="nav-link" href="./login">
+                      Login
+                    </a>
+                  }
                 </li>
               </ul>
             </div>
